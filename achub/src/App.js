@@ -12,11 +12,13 @@ import Home from './components/Home';
 
 function App() {
   const [villagers, setVillagers] = useState([])
+
   useEffect(() => {
     fetch('https://acnhapi.com/v1a/villagers')
     .then(r => r.json())
-    .then(data => setVillagers(data))
+    .then(data => setVillagers(() => data))
   }, [])
+
 
   return (
     <div className="App">
