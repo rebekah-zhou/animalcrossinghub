@@ -1,23 +1,16 @@
-import React, { useEffect } from 'react'
-
-
-function Card({ randomVillager }) {
-    return (
-        <div>
-            Random
-        </div>
-    )
-}
+import React from 'react'
+import Card from './Card'
 
 function Home({ villagers }) {
-
+    
     const randomNum = Math.floor(Math.random() * 391)
-    const randomVillager = villagers.find(villager => villager.id === randomNum)
-
+    const foundVillager = villagers.find(villager => villager.id === randomNum)
+    
+    
 
   return (
     <div>
-        <Card randomVillager={randomVillager}/>
+        {foundVillager ? <Card villager={foundVillager}/> : null}
     </div>
   )
 }
