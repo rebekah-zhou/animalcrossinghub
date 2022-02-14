@@ -1,8 +1,17 @@
 import React from 'react'
 
+function SideBar() {
+  return (
+    <>
+    </>
+  )
+}
+
 function Villagers() {
   return (
-    <div>Villagers</div>
+    <div>Villagers
+      <SideBar />
+    </div>
   )
 }
 
