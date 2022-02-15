@@ -16,7 +16,7 @@ const StyledCardDiv = styled.div`
 `
 
 function Card({ dataObj, comType }) {
-  console.log(dataObj)
+  // console.log(dataObj)
     const {image_uri, name} = dataObj
 
   // if (comType === 'home') {

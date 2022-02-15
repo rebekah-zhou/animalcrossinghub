@@ -20,21 +20,22 @@ function Villagers({ villagers }) {
     fetch('http://localhost:3000/villager-likes/')
     .then(r => r.json())
     .then(fetchedVotedVilagers => {
-      const reducedHighestVotedVil = [...fetchedVotedVilagers].reduce((prev, current) => prev.likes > current.likes ? prev : current)
-      setHighestVotesObj(reducedHighestVotedVil)
+      // const reducedHighestVotedVil = [...fetchedVotedVilagers].reduce((prev, current) => Math.max(prev.likes, current.likes), -Infinity)
+      const reducedHighestVotedVil = [...fetchedVotedVilagers].sort((a, b) => b.likes - a.likes)
+      setHighestVotesObj(reducedHighestVotedVil[0])
     })
   }, [])
 
-  const highestVotedVil = [...villagers].filter(villager => {
-    return villager.name['name-USen'] === highestVotesObj.name
-  })
+  // need to do -1 because data is offset
+  const highestVotedVil = villagers[highestVotesObj.id - 1]
 
+  console.log(highestVotedVil)
 
   return (
     <div>
       {/* <StyledDiv>{villagers.map(villager => <SideBar key={villager.name['name-USen']} name={villager.name['name-USen']}/>)}</StyledDiv> */}
       {/* TODO: fix card error (undefined) */}
-      {/* {highestVotedVil[0].name['name-USen'] ? <Card comType='villager' dataObj={highestVotedVil[0]}/> : <h2>Loading ...</h2>} */}
+      {highestVotedVil.name['name-USen'] ? <Card comType='villager' dataObj={highestVotedVil}/> : <h2>Loading ...</h2>}
     </div>
   )
 }
