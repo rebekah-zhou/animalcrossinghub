@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Card from './Card'
-import SideBar from './SideBar';
+// import SideBar from './SideBar';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`

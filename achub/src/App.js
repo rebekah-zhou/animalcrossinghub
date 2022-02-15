@@ -23,7 +23,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path='/villagers'>
-          <Villagers villagers={villagers}/>
+          {villagers[0] ? <Villagers villagers={villagers}/> : <h2> Loading...</h2>}
         </Route>
         <Route path='/fossils'>
           <Fossils />
