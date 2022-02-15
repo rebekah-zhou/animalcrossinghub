@@ -15,27 +15,27 @@ width: 20%;
 
 function Villagers({ villagers }) {
   const [highestVotesObj, setHighestVotesObj] = useState([])
-
+  
   useEffect(() => {
     fetch('http://localhost:3000/villager-likes/')
     .then(r => r.json())
     .then(fetchedVotedVilagers => {
       // const reducedHighestVotedVil = [...fetchedVotedVilagers].reduce((prev, current) => Math.max(prev.likes, current.likes), -Infinity)
-      const reducedHighestVotedVil = [...fetchedVotedVilagers].sort((a, b) => b.likes - a.likes)
-      setHighestVotesObj(reducedHighestVotedVil[0])
+      const sortedVillagers = [...fetchedVotedVilagers].sort((a, b) => b.likes - a.likes)
+      setHighestVotesObj(sortedVillagers[0])
     })
   }, [])
 
   // need to do -1 because data is offset
   const highestVotedVil = villagers[highestVotesObj.id - 1]
 
-  console.log(highestVotedVil)
+  console.log(highestVotesObj)
 
   return (
     <div>
       {/* <StyledDiv>{villagers.map(villager => <SideBar key={villager.name['name-USen']} name={villager.name['name-USen']}/>)}</StyledDiv> */}
       {/* TODO: fix card error (undefined) */}
-      {highestVotedVil.name['name-USen'] ? <Card comType='villager' dataObj={highestVotedVil}/> : <h2>Loading ...</h2>}
+      {highestVotedVil ? <Card comType='villager' dataObj={highestVotedVil}/> : <h2>Loading ...</h2>}
     </div>
   )
 }
