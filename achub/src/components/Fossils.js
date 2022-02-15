@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import styled from 'styled-components';
 import Card from './Card'
+import SideBar from './SideBar';
+import styled from 'styled-components';
+
+const StyledDiv = styled.div`
+position: relative;
+top: 0;
+left: 0;
+width: 20%;
+// height: 100%;
+// padding: 20px 0;
+`
 
 function Fossils() {
   const [fossils, setFossils] = useState([])
@@ -11,20 +21,12 @@ function Fossils() {
     .then(fetchedFossils => setFossils(fetchedFossils))
   }, [])
 
-  // TODO: fix styling of list of fossils
-  // TODO: add onClick render of that fossil's information
   const randomNum = Math.floor(Math.random() * 73)
   const foundFossil = fossils[randomNum]
-  console.log(foundFossil)
-
-  const StyledLi = styled.li`
-      border-style: solid;
-      border-radius: 30%;
-    `
 
   return (
     <div>
-      {/* {fossils.map(fossil => <StyledLi>{fossil.name['name-USen']}</StyledLi>)} */}
+      {/* <StyledDiv>{fossils.map(fossil => <SideBar key={fossil.name['name-USen']} name={fossil.name['name-USen']}/>)}</StyledDiv> */}
       {foundFossil ? <Card dataObj={foundFossil} comType='fossil'/> : <h2>Loading ...</h2>}
     </div>
   )
