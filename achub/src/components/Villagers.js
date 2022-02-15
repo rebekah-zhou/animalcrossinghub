@@ -5,12 +5,16 @@ import SideBar from './SideBar'
 
 // TODO: refactor to be re-usable (currently copied code in fossils)
 const StyledDiv = styled.div`
-position: relative;
-top: 0;
+position: fixed;
 left: 0;
-width: 20%;
-// height: 100%;
-// padding: 20px 0;
+width: 25%;
+height: 80%;
+overflow: scroll;
+`
+
+const ContainerDiv = styled.div`
+  display: flex;
+  flex-direction: row;
 `
 
 function Villagers({ villagers }) {
@@ -20,7 +24,6 @@ function Villagers({ villagers }) {
     fetch('http://localhost:3000/villager-likes/')
     .then(r => r.json())
     .then(fetchedVotedVilagers => {
-      // const reducedHighestVotedVil = [...fetchedVotedVilagers].reduce((prev, current) => Math.max(prev.likes, current.likes), -Infinity)
       const sortedVillagers = [...fetchedVotedVilagers].sort((a, b) => b.likes - a.likes)
       setHighestVotesObj(sortedVillagers[0])
     })
@@ -32,11 +35,10 @@ function Villagers({ villagers }) {
   console.log(highestVotesObj)
 
   return (
-    <div>
-      {/* <StyledDiv>{villagers.map(villager => <SideBar key={villager.name['name-USen']} name={villager.name['name-USen']}/>)}</StyledDiv> */}
-      {/* TODO: fix card error (undefined) */}
+    <ContainerDiv>
+      <StyledDiv>{villagers.map(villager => <SideBar key={villager.name['name-USen']} name={villager.name['name-USen']}/>)}</StyledDiv>
       {highestVotedVil ? <Card comType='villager' dataObj={highestVotedVil}/> : <h2>Loading ...</h2>}
-    </div>
+    </ContainerDiv>
   )
 }
 
