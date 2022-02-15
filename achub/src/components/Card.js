@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
 
+const StyledImg = styled.img`
+border-radius: 40%;
+`
+
 function Card({ villager }) {
     const {image_uri, name} = villager
 
-    const StyledImg = styled.img`
-      border-radius: 40%;
-    `
-  
   return (
     <div>
         <StyledImg src={image_uri}></StyledImg>
