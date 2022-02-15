@@ -11,36 +11,12 @@ import Home from './components/Home';
 
 function App() {
   const [villagers, setVillagers] = useState([])
-  const [bugs, setBugs] = useState([])
-  const [seaCreatures, setSeaCreatures] = useState([])
-  const [fish, setFish] = useState([])
-
 
   useEffect(() => {
     fetch('https://acnhapi.com/v1a/villagers')
     .then(r => r.json())
     .then(data => setVillagers(() => data))
   }, [])
-
-  useEffect(() => {
-    fetch('https://acnhapi.com/v1a/bugs')
-    .then(r => r.json())
-    .then(data => setBugs(() => data))
-  }, [])
-
-  useEffect(() => {
-    fetch('https://acnhapi.com/v1a/sea')
-    .then(r => r.json())
-    .then(data => setSeaCreatures(() => data))
-  }, [])
-
-  useEffect(() => {
-    fetch('https://acnhapi.com/v1a/fish')
-    .then(r => r.json())
-    .then(data => setFish(() => data))
-  }, [])
-
-
 
   return (
     <div className="App">
@@ -53,9 +29,7 @@ function App() {
           <Fossils />
         </Route>
         <Route path='/critters'>
-          <Critters seaCreatures={seaCreatures}
-            bugs={bugs}
-            fish={fish} />
+          <Critters />
         </Route>
         <Route exact path='/'>
           <Home villagers={villagers}/>

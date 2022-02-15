@@ -1,19 +1,42 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
+const linkStyles = {
+    fontFamily: 'SweetSaturday',
+    fontSize: '40px',
+    margin: "20px",
+    color: 'darkGoldenRod'
+}
+
+const activeLinkStyle = {
+    color: 'green'
+}
+
 function NavBar() {
   return (
     <div>
-        <NavLink style={{ marginRight: "10px" }} to="/">
+        <NavLink style={linkStyles} 
+            activeStyle={activeLinkStyle} 
+            to="/"
+            exact>
             Home
         </NavLink>
-        <NavLink style={{ marginRight: "10px" }} to="/villagers">
+        <NavLink style={linkStyles} 
+            activeStyle={activeLinkStyle} 
+            to="/villagers"
+            exact>
             Villagers
         </NavLink>
-        <NavLink style={{ marginRight: "10px" }} to="/fossils">
+        <NavLink style={linkStyles} 
+            activeStyle={activeLinkStyle} 
+            to="/fossils"
+            exact>
             Fossils
         </NavLink>
-        <NavLink style={{ marginRight: "10px" }} to="/critters">
+        <NavLink style={linkStyles} 
+            activeStyle={activeLinkStyle} 
+            to="/critters"
+            exact>
             Critters
         </NavLink>
     </div>
