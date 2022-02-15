@@ -1,21 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Card from './Card'
 
 function Home({ villagers }) {
     
     const randomNum = Math.floor(Math.random() * 391)
     const foundVillager = villagers.find(villager => villager.id === randomNum)
-    
-    const villagerNames = villagers.map(villager => {
-      return {
-        name: villager.name['name-USen'],
-        likes: 0
-      }
-    })
 
   return (
     <div>
-        {foundVillager ? <Card villager={foundVillager}/> : null}
+        {foundVillager ? <Card dataObj={foundVillager} comType='home'/> : <h2>Loading ...</h2>}
     </div>
   )
 }
