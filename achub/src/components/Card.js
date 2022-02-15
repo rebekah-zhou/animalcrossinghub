@@ -16,7 +16,7 @@ function Card({ dataObj, comType }) {
         <h2>{name['name-USen']}</h2>
         {/* TODO: add other CardBottoms where needed */}
         {comType === 'home' ? <h2>Catch Phrase: {dataObj['catch-phrase']}</h2> : <FossilCardBottom museumPhrase={dataObj['museum-phrase']} price={dataObj['price']} partOf={dataObj['part-of']} />}
-        {comType === 'home' ? <Voter villagerName={name['name-USen']}/> : null}
+        {comType === 'home' ? <Voter foundVillagerID={dataObj.id} foundVillagerName={name['name-USen']}/> : null}
     </div>
   )
 }
