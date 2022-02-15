@@ -13,17 +13,6 @@ function Home({ villagers }) {
       }
     })
 
-    console.log(villagerNames)
-    // fetch('http://localhost:3000/villager-likes/', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(villagerNames)
-    // })
-
-    console.log(villagerNames)
-
   return (
     <div>
         {foundVillager ? <Card villager={foundVillager}/> : null}
