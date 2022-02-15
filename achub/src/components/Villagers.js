@@ -32,8 +32,6 @@ function Villagers({ villagers }) {
   // need to do -1 because data is offset
   const highestVotedVil = villagers[highestVotesObj.id - 1]
 
-  console.log(highestVotesObj)
-
   return (
     <ContainerDiv>
       <StyledDiv>{villagers.map(villager => <SideBar key={villager.name['name-USen']} name={villager.name['name-USen']}/>)}</StyledDiv>

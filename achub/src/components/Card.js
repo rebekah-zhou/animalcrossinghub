@@ -9,41 +9,14 @@ const StyledImg = styled.img`
 
 const StyledCardDiv = styled.div`
   position: relative;
-  top: 0;
-  left: 30%;
-  width: 50%;
-  height: 100%;
+  width: 55%;
+  margin: auto;
+  background-color: #f1ebdc;
+  border-radius: 20%;
 `
 
 function Card({ dataObj, comType }) {
-  // console.log(dataObj)
     const {image_uri, name} = dataObj
-
-  // if (comType === 'home') {
-  //   return (
-  //     <StyledCardDiv>
-  //       <StyledImg src={image_uri}></StyledImg>
-  //       <h2>{name['name-USen']}</h2>
-  //       <h2>Catch Phrase: {dataObj['catch-phrase']}</h2>
-  //       <Voter foundVillagerID={dataObj.id} foundVillagerName={name['name-USen']}/>
-  //     </StyledCardDiv>
-  //   )
-  // } elseif (comType === 'fossil') {
-  //   return (
-  //     <StyledCardDiv>
-  //       <StyledImg src={image_uri}></StyledImg>
-  //       <h2>{name['name-USen']}</h2>
-  //       <FossilCardBottom museumPhrase={dataObj['museum-phrase']} price={dataObj['price']} partOf={dataObj['part-of']} />
-  //     </StyledCardDiv>
-  //   )
-  // } elseif (comType === 'villager') {
-  //   return (
-  //     <StyledCardDiv>
-  //       <StyledImg src={image_uri}></StyledImg>
-  //       <h2>{name['name-USen']}</h2>
-  //     </StyledCardDiv>
-  //   )
-  // }
 
   return (
     <StyledCardDiv>
