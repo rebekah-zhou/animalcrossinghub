@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
 import Card from './Card'
 
+const StyledLi = styled.li`
+border-style: solid;
+border-radius: 30%;
+`
+
 function Fossils() {
   const [fossils, setFossils] = useState([])
 
@@ -17,10 +22,6 @@ function Fossils() {
   const foundFossil = fossils[randomNum]
   console.log(foundFossil)
 
-  const StyledLi = styled.li`
-      border-style: solid;
-      border-radius: 30%;
-    `
 
   return (
     <div>
