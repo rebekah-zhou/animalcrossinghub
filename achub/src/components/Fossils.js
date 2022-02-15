@@ -26,7 +26,7 @@ function Fossils() {
 
   return (
     <div>
-      <StyledDiv>{fossils.map(fossil => <SideBar key={fossil.name['name-USen']} name={fossil.name['name-USen']}/>)}</StyledDiv>
+      {/* <StyledDiv>{fossils.map(fossil => <SideBar key={fossil.name['name-USen']} name={fossil.name['name-USen']}/>)}</StyledDiv> */}
       {foundFossil ? <Card dataObj={foundFossil} comType='fossil'/> : <h2>Loading ...</h2>}
     </div>
   )
