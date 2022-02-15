@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import Voter from './Voter';
 import FossilCardBottom from './FossilCardBottom'
 
+const StyledImg = styled.img`
+border-radius: 40%;
+`
+
 function Card({ dataObj, comType }) {
     const {image_uri, name} = dataObj
 
-    const StyledImg = styled.img`
-      border-radius: 40%;
-    `
-  
   return (
     <div>
         <StyledImg src={image_uri}></StyledImg>
