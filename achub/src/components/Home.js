@@ -13,7 +13,7 @@ function Home({ villagers, votedVillagers }) {
   return (
     <div>
         <Card dataObj={foundVillager} comType='home'/>
-        <Voter foundVillagerID={foundVillager.id} foundVillagerName={foundVillager.name['name-USen']} prevLikes={randomVilVotes}/>
+        <Voter id={foundVillager.id} name={foundVillager.name['name-USen']} prevLikes={randomVilVotes}/>
     </div>
   )
 }

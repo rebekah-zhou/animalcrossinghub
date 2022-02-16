@@ -38,7 +38,7 @@ function Villagers({ villagers, votedVillagers }) {
     <ContainerDiv>
       <StyledDiv>{villagers.map(villager => <SideBar key={villager.name['name-USen']} name={villager.name['name-USen']} handleLiClickPass={handleLiClickPass}/>)}</StyledDiv>
       {highestVotedVil ? <Card comType='villager' dataObj={clickedVillager.name ? clickedVillager : highestVotedVil}/> : <h2>Loading ...</h2>}
-      {highestVotedVil ? <Voter foundVillagerID={clickedVillager.name ? clickedVillager.id : highestVotedVil.id} foundVillagerName={clickedVillager.name ? clickedVillager.name : highestVotedVil.name['name-USen']} prevLikes={clickedVilVotes ? clickedVilVotes : highestVilVotes}/> : null}
+      {highestVotedVil ? <Voter id={clickedVillager.name ? clickedVillager.id : highestVotedVil.id} name={clickedVillager.name ? clickedVillager.name : highestVotedVil.name['name-USen']} prevLikes={clickedVilVotes ? clickedVilVotes : highestVilVotes}/> : null}
     </ContainerDiv>
   )
 }
