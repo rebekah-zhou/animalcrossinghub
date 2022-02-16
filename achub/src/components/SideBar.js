@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 
 const StyledLi = styled.li`
@@ -12,9 +12,12 @@ const StyledLi = styled.li`
   // TODO: fix styling of list of fossils
   // TODO: add onClick render of that fossil's information
 
-function SideBar({ name }) {
+function SideBar({ name, handleLiClickPass }) {
+
+
+
   return (
-    <StyledLi>{name}</StyledLi>
+    <StyledLi onClick={(e) => handleLiClickPass(e.target.innerText)}>{name}</StyledLi>
   )
 }
 
