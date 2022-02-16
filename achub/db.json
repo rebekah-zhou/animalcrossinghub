@@ -32,7 +32,7 @@
     },
     {
       "name": "Olaf",
-      "likes": 0,
+      "likes": 1,
       "id": 7
     },
     {
@@ -1307,7 +1307,7 @@
     },
     {
       "name": "Moose",
-      "likes": 7,
+      "likes": 8,
       "id": 262
     },
     {

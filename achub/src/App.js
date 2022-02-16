@@ -22,7 +22,10 @@ function App() {
   useEffect(() => {
     fetch('http://localhost:3000/villager-likes/')
     .then(r => r.json())
-    .then(fetchedVotedVilagers => setVotedVillagers(fetchedVotedVilagers))
+    .then(fetchedVotedVilagers => {
+      setVotedVillagers(fetchedVotedVilagers)
+      const sortedVillagers = fetchedVotedVilagers.sort((a, b) => b.likes - a.likes)
+    })
   }, [])
 
   return (
@@ -30,7 +33,10 @@ function App() {
       <NavBar />
       <Switch>
         <Route path='/villagers'>
-          {villagers[0] ? <Villagers villagers={villagers} votedVillagers={votedVillagers}/> : <h2> Loading...</h2>}
+          {villagers[1] && votedVillagers[1] ? 
+            <Villagers villagers={villagers} 
+            votedVillagers={votedVillagers}/> 
+            : <h2> Loading...</h2>}
         </Route>
         <Route path='/fossils'>
           <Fossils />
@@ -39,7 +45,10 @@ function App() {
           <Critters />
         </Route>
         <Route exact path='/'>
-          {villagers[0] ? <Home villagers={villagers} votedVillagers={votedVillagers}/> : <h2>Loading...</h2>}
+          {villagers[1] && votedVillagers[1] ? 
+          <Home villagers={villagers} 
+            votedVillagers={votedVillagers}/>
+            : <h2>Loading...</h2>}
         </Route>
       </Switch>
     </div>
