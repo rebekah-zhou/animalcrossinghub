@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 
-function Voter({ foundVillagerID, foundVillagerName }) {
-    const [likes, SetLikes] = useState(0)
+function Voter({ foundVillagerID, foundVillagerName, prevLikes }) {
+    const [likes, SetLikes] = useState(prevLikes)
 
     function handleClick() {
         SetLikes(likes => likes + 1)

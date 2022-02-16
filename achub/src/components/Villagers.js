@@ -19,33 +19,26 @@ const ContainerDiv = styled.div`
   flex-direction: row;
 `
 
-function Villagers({ villagers }) {
-  const [highestVotesObj, setHighestVotesObj] = useState([])
+function Villagers({ villagers, votedVillagers }) {
   const [clickedVillager, setClickedVillager] = useState([])
   
-  useEffect(() => {
-    fetch('http://localhost:3000/villager-likes/')
-    .then(r => r.json())
-    .then(fetchedVotedVilagers => {
-      const sortedVillagers = [...fetchedVotedVilagers].sort((a, b) => b.likes - a.likes)
-      setHighestVotesObj(sortedVillagers[0])
-    })
-  }, [])
-  // need to do -1 because data is offset
-  const highestVotedVil = villagers[highestVotesObj.id - 1]
+  const sortedVillagers = [...votedVillagers].sort((a, b) => b.likes - a.likes)
+  const highestVotedVil = villagers[sortedVillagers[0].id - 1] // need to do -1 because data is offset
 
   function handleLiClickPass(clickedVilName) {
     const foundVil = villagers.find(villager => villager.name['name-USen'] === clickedVilName)
     setClickedVillager(foundVil)
   }
 
-  console.log(highestVotedVil)
+  // Find votes related to villager on screen
+  const highestVilVotes = [...votedVillagers].find(votedVillager => votedVillager.name === highestVotedVil.name['name-USen']).likes
+  const clickedVilVotes = clickedVillager.name ? [...votedVillagers].find(votedVillager => votedVillager.name === clickedVillager.name['name-USen']).likes : null
 
   return (
     <ContainerDiv>
       <StyledDiv>{villagers.map(villager => <SideBar key={villager.name['name-USen']} name={villager.name['name-USen']} handleLiClickPass={handleLiClickPass}/>)}</StyledDiv>
       {highestVotedVil ? <Card comType='villager' dataObj={clickedVillager.name ? clickedVillager : highestVotedVil}/> : <h2>Loading ...</h2>}
-      {/* {highestVotedVil ? <Voter foundVillagerID={clickedVillager.name ? clickedVillager.id : highestVotedVil.id} foundVillagerName={clickedVillager.name ? clickedVillager.name : highestVotedVil.name['name-USen']}/> : null} */}
+      {highestVotedVil ? <Voter foundVillagerID={clickedVillager.name ? clickedVillager.id : highestVotedVil.id} foundVillagerName={clickedVillager.name ? clickedVillager.name : highestVotedVil.name['name-USen']} prevLikes={clickedVilVotes ? clickedVilVotes : highestVilVotes}/> : null}
     </ContainerDiv>
   )
 }

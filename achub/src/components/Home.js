@@ -2,16 +2,18 @@ import React, { useEffect } from 'react'
 import Card from './Card'
 import Voter from './Voter'
 
-function Home({ villagers }) {
+function Home({ villagers, votedVillagers }) {
     
     const randomNum = Math.floor(Math.random() * 391)
     const foundVillager = villagers[randomNum]
 
+    // Find votes related to villager on screen
+    const randomVilVotes = [...votedVillagers].find(votedVillager => votedVillager.name === foundVillager.name['name-USen']).likes
 
   return (
     <div>
-        {foundVillager ? <Card dataObj={foundVillager} comType='home'/> : <h2>Loading ...</h2>}
-        {foundVillager ? <Voter foundVillagerID={foundVillager.id} foundVillagerName={foundVillager.name['name-USen']}/> : null}
+        <Card dataObj={foundVillager} comType='home'/>
+        <Voter foundVillagerID={foundVillager.id} foundVillagerName={foundVillager.name['name-USen']} prevLikes={randomVilVotes}/>
     </div>
   )
 }
