@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import Voter from './Voter';
 import FossilCardBottom from './FossilCardBottom'
 
 const StyledImg = styled.img`
@@ -43,7 +42,6 @@ function Card({ dataObj, comType }) {
         <h2>{name['name-USen']}</h2>
         {/* TODO: add other CardBottoms where needed */}
         {renderCardInfo()}
-        {/* {comType === 'home' ? <h2>Catch Phrase: {dataObj['catch-phrase']}</h2> : <FossilCardBottom museumPhrase={dataObj['museum-phrase']} price={dataObj['price']} partOf={dataObj['part-of']} /> } */}
         {/* {comType === 'home' ? <Voter foundVillagerID={dataObj.id} foundVillagerName={name['name-USen']}/> : null} */}
     </StyledCardDiv>
   )

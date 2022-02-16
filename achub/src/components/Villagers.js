@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Card from './Card'
 import styled from 'styled-components'
 import SideBar from './SideBar'
+import Voter from './Voter'
 
 // TODO: refactor to be re-usable (currently copied code in fossils)
 const StyledDiv = styled.div`
@@ -38,10 +39,13 @@ function Villagers({ villagers }) {
     setClickedVillager(foundVil)
   }
 
+  console.log(highestVotedVil)
+
   return (
     <ContainerDiv>
       <StyledDiv>{villagers.map(villager => <SideBar key={villager.name['name-USen']} name={villager.name['name-USen']} handleLiClickPass={handleLiClickPass}/>)}</StyledDiv>
       {highestVotedVil ? <Card comType='villager' dataObj={clickedVillager.name ? clickedVillager : highestVotedVil}/> : <h2>Loading ...</h2>}
+      {/* {highestVotedVil ? <Voter foundVillagerID={clickedVillager.name ? clickedVillager.id : highestVotedVil.id} foundVillagerName={clickedVillager.name ? clickedVillager.name : highestVotedVil.name['name-USen']}/> : null} */}
     </ContainerDiv>
   )
 }
