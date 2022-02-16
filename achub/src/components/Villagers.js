@@ -19,6 +19,7 @@ const ContainerDiv = styled.div`
 
 function Villagers({ villagers }) {
   const [highestVotesObj, setHighestVotesObj] = useState([])
+  const [clickedVillager, setClickedVillager] = useState([])
   
   useEffect(() => {
     fetch('http://localhost:3000/villager-likes/')
@@ -28,16 +29,18 @@ function Villagers({ villagers }) {
       setHighestVotesObj(sortedVillagers[0])
     })
   }, [])
-
   // need to do -1 because data is offset
   const highestVotedVil = villagers[highestVotesObj.id - 1]
 
-  console.log(highestVotesObj)
+  function handleLiClickPass(clickedVilName) {
+    const foundVil = villagers.find(villager => villager.name['name-USen'] === clickedVilName)
+    setClickedVillager(foundVil)
+  }
 
   return (
     <ContainerDiv>
-      <StyledDiv>{villagers.map(villager => <SideBar key={villager.name['name-USen']} name={villager.name['name-USen']}/>)}</StyledDiv>
-      {highestVotedVil ? <Card comType='villager' dataObj={highestVotedVil}/> : <h2>Loading ...</h2>}
+      <StyledDiv>{villagers.map(villager => <SideBar key={villager.name['name-USen']} name={villager.name['name-USen']} handleLiClickPass={handleLiClickPass}/>)}</StyledDiv>
+      {highestVotedVil ? <Card comType='villager' dataObj={clickedVillager.name ? clickedVillager : highestVotedVil}/> : <h2>Loading ...</h2>}
     </ContainerDiv>
   )
 }
