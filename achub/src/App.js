@@ -11,6 +11,7 @@ import Home from './components/Home';
 
 function App() {
   const [villagers, setVillagers] = useState([])
+  const [votedVillagers, setVotedVillagers] = useState([])
 
   useEffect(() => {
     fetch('https://acnhapi.com/v1a/villagers')
@@ -18,12 +19,24 @@ function App() {
     .then(data => setVillagers(() => data))
   }, [])
 
+  useEffect(() => {
+    fetch('http://localhost:3000/villager-likes/')
+    .then(r => r.json())
+    .then(fetchedVotedVilagers => {
+      setVotedVillagers(fetchedVotedVilagers)
+      const sortedVillagers = fetchedVotedVilagers.sort((a, b) => b.likes - a.likes)
+    })
+  }, [])
+
   return (
     <div className="App">
       <NavBar />
       <Switch>
         <Route path='/villagers'>
-          {villagers[0] ? <Villagers villagers={villagers}/> : <h2> Loading...</h2>}
+          {villagers[1] && votedVillagers[1] ? 
+            <Villagers villagers={villagers} 
+            votedVillagers={votedVillagers}/> 
+            : <h2> Loading...</h2>}
         </Route>
         <Route path='/fossils'>
           <Fossils />
@@ -32,7 +45,10 @@ function App() {
           <Critters />
         </Route>
         <Route exact path='/'>
-          <Home villagers={villagers}/>
+          {villagers[1] && votedVillagers[1] ? 
+          <Home villagers={villagers} 
+            votedVillagers={votedVillagers}/>
+            : <h2>Loading...</h2>}
         </Route>
       </Switch>
     </div>

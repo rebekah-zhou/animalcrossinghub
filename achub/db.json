@@ -32,7 +32,7 @@
     },
     {
       "name": "Olaf",
-      "likes": 0,
+      "likes": 1,
       "id": 7
     },
     {
@@ -452,7 +452,7 @@
     },
     {
       "name": "Tipper",
-      "likes": 0,
+      "likes": 2,
       "id": 91
     },
     {
@@ -487,7 +487,7 @@
     },
     {
       "name": "Sly",
-      "likes": 4,
+      "likes": 0,
       "id": 98
     },
     {
@@ -667,7 +667,7 @@
     },
     {
       "name": "Freckles",
-      "likes": 13,
+      "likes": 0,
       "id": 134
     },
     {
@@ -862,7 +862,7 @@
     },
     {
       "name": "Chevre",
-      "likes": 0,
+      "likes": 1,
       "id": 173
     },
     {
@@ -1052,7 +1052,7 @@
     },
     {
       "name": "Ed",
-      "likes": 0,
+      "likes": 1,
       "id": 211
     },
     {
@@ -1217,7 +1217,7 @@
     },
     {
       "name": "Nana",
-      "likes": 8,
+      "likes": 0,
       "id": 244
     },
     {
@@ -1307,7 +1307,7 @@
     },
     {
       "name": "Moose",
-      "likes": 0,
+      "likes": 8,
       "id": 262
     },
     {

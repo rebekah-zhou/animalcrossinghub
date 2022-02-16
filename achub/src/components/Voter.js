@@ -1,26 +1,23 @@
 import React, {useState, useEffect} from "react"
 
-function Voter({ foundVillagerID, foundVillagerName }) {
-    const [likes, SetLikes] = useState(0)
+function Voter({ id, name, prevLikes }) {
+    const [likes, setLikes] = useState(prevLikes)
 
     function handleClick() {
-        SetLikes(likes => likes + 1)
-    }
-
-    useEffect(() => {
+        setLikes(likes => likes + 1)
         const updatedVillagerLikes = {
-            name: foundVillagerName,
-            likes: likes
+            name: name,
+            likes: likes + 1 
         }
-        fetch(`http://localhost:3000/villager-likes/${foundVillagerID}`, {
+        fetch(`http://localhost:3000/villager-likes/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(updatedVillagerLikes)
         })
-    }, [likes])
-  
+    }
+
     return (
       <div>
           <small>All Likes: {likes}</small>

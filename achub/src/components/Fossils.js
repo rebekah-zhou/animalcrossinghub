@@ -19,6 +19,7 @@ const ContainerDiv = styled.div`
 
 function Fossils() {
   const [fossils, setFossils] = useState([])
+  const [clickedFossil, setClickedFossil] = useState([])
 
   useEffect(() => {
     fetch('https://acnhapi.com/v1a/fossils')
@@ -29,10 +30,17 @@ function Fossils() {
   const randomNum = Math.floor(Math.random() * 73)
   const foundFossil = fossils[randomNum]
 
+  function handleLiClickPass(clickedFossilName) {
+    if (foundFossil) {
+      const foundClickedFossil = fossils.find(fossil => fossil.name['name-USen'] === clickedFossilName)
+      setClickedFossil(foundClickedFossil)
+    }
+  }
+
   return (
     <ContainerDiv>
-      <StyledDiv>{fossils.map(fossil => <SideBar key={fossil.name['name-USen']} name={fossil.name['name-USen']}/>)}</StyledDiv>
-      {foundFossil ? <Card dataObj={foundFossil} comType='fossil'/> : <h2>Loading ...</h2>}
+      <StyledDiv>{fossils.map(fossil => <SideBar key={fossil.name['name-USen']} name={fossil.name['name-USen']} handleLiClickPass={handleLiClickPass}/>)}</StyledDiv>
+      {foundFossil ? <Card dataObj={clickedFossil.name ? clickedFossil : foundFossil} comType='fossil'/> : <h2>Loading ...</h2>}
     </ContainerDiv>
   )
 }
