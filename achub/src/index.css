@@ -12,6 +12,13 @@ code {
     monospace;
 }
 
+/* scroll bar settings for chrome
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: green;
+} */
+
 /* CSS from https://codepen.io/Leoche/pen/rNVggzx */
 html,
 body {

@@ -4,11 +4,15 @@ import CritterTable from './CritterTable'
 
 
 const StyledContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
     margin-left: 20px;
     margin-right: 20px;
+    padding-top: 40px;
 ` 
+
+const ContainerColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 function Critters() {
     
@@ -51,12 +55,14 @@ function Critters() {
   }, [])
     
   return (
-    <div>
-      <button type='button' name='bugs' onClick={(e) => setClickValue(e.target.name)}>Bugs</button>
-      <button type='button' name='fish' onClick={(e) => setClickValue(e.target.name)}>Fish</button>
-      <button type='button' name='sea' onClick={(e) => setClickValue(e.target.name)}>Sea</button>
+    <ContainerColumn>
+      <StyledContainer>
+        <button type='button' name='bugs' onClick={(e) => setClickValue(e.target.name)}>Bugs</button>
+        <button type='button' name='fish' onClick={(e) => setClickValue(e.target.name)}>Fish</button>
+        <button type='button' name='sea' onClick={(e) => setClickValue(e.target.name)}>Sea</button>
+      </StyledContainer>
       <CritterTable selectedCritters={selectedCritters} />
-    </div>
+    </ContainerColumn>
   )
 }
 

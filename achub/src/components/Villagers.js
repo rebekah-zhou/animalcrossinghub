@@ -9,7 +9,8 @@ position: fixed;
 left: 0;
 width: 25%;
 height: 80%;
-overflow: scroll;
+overflow-y: scroll;
+scrollbar-color: green;
 `
 
 const ContainerDiv = styled.div`
