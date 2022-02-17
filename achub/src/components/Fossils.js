@@ -37,9 +37,10 @@ function Fossils() {
     }
   }
 
+  console.log(fossils)
   return (
     <ContainerDiv>
-      <StyledDiv>{fossils.map(fossil => <SideBar key={fossil.name['name-USen']} name={fossil.name['name-USen']} handleLiClickPass={handleLiClickPass}/>)}</StyledDiv>
+      <StyledDiv><SideBar handleLiClickPass={handleLiClickPass} fossils={fossils}/>)</StyledDiv>
       {foundFossil ? <Card dataObj={clickedFossil.name ? clickedFossil : foundFossil} comType='fossil'/> : <h2>Loading ...</h2>}
     </ContainerDiv>
   )
