@@ -10,14 +10,14 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 
 const StyledH2 = styled.h2`
-  background-color: #fdf8e3;
+  background-color: #feed9b;
   width: 250px;
   margin: auto;
   margin-bottom: 6px;
   margin-top: 6px;
-  border-style: dotted;
-  border-radius: 10%;
+  border-radius: 30% 30% 20% 20% / 100% 100% 100% 100%;
   padding: 3px;
+  border: 5px dotted darkGoldenRod;
 `
 const StyledImg = styled.img`
   object-fit: cover;
