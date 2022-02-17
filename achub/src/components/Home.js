@@ -12,9 +12,9 @@ function Home({ villagers, votedVillagers, StyledH2 }) {
 
   return (
     <div>
-        <StyledH2>Featured Villager</StyledH2>
-        <Card dataObj={foundVillager} comType='home'/>
+        <StyledH2>Visiting Villager</StyledH2>
         <Voter id={foundVillager.id} name={foundVillager.name['name-USen']} prevLikes={randomVilVotes}/>
+        <Card dataObj={foundVillager} comType='home'/>
     </div>
   )
 }

@@ -5,7 +5,9 @@ const StyledSmall = styled.small`
     font-family: 'Nunito';
     font-weight: bold;
 `
-
+const StyledDiv = styled.div`
+    position: static;
+`
 function Voter({ id, name, prevLikes }) {
     const [likes, setLikes] = useState(prevLikes)
 
@@ -25,10 +27,10 @@ function Voter({ id, name, prevLikes }) {
     }
 
     return (
-      <div>
+      <StyledDiv>
           <StyledSmall>{likes} likes</StyledSmall>
           <button onClick={handleClick}>Like</button>
-      </div>
+      </StyledDiv>
     )
 }
 
