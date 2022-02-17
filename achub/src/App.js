@@ -20,7 +20,7 @@ const StyledH2 = styled.h2`
   padding: 3px;
 `
 const StyledImg = styled.img`
-
+  object-fit: cover;
 `
 function App() {
   const [villagers, setVillagers] = useState([])
