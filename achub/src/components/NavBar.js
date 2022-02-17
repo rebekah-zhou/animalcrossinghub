@@ -9,7 +9,8 @@ const linkStyles = {
     color: 'darkGoldenRod',
     cursor: 'url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1385231/hand-cursor.png"), pointer',
     letterSpacing: '2px',
-    textShadow: '-1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white',
+    // textShadow: '-1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white',
+    textShadow: '4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15)',
     textDecoration: 'none',
 }
 
@@ -24,7 +25,7 @@ const hoverStyle = {
     color: 'pink',
     cursor: 'url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1385231/hand-cursor.png"), pointer',
     letterSpacing: '2px',
-    textShadow: '-1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white',
+    textShadow: '4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15)',
     textDecoration: 'none',
 }
 
