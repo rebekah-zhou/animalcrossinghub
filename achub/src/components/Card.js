@@ -14,6 +14,7 @@ const StyledCardDiv = styled.div`
   margin: auto;
   background-color: #f1ebdc;
   border-radius: 20%;
+  box-shadow: 8px 18px 0 -8px rgba(0, 0, 0, 0.05);
 `
 function Card({ dataObj, comType }) {
     const {image_uri, name} = dataObj
