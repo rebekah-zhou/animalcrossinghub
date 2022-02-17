@@ -10,7 +10,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 
 const StyledH2 = styled.h2`
-  background-color: #f1ebdc;
+  background-color: #fdf8e3;
   width: 250px;
   margin: auto;
   margin-bottom: 6px;

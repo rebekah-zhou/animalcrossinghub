@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledTopCard = styled.div`
-  top: 0;
+  top: 0px;
   width: 91%;
   height: 75%;
   background-color: #fdf8e3;

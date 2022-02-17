@@ -7,7 +7,7 @@ function VillagerCardBottom({ villager }) {
           <h4>Personality: {villager['personality']} | Subtype: {villager['subtype']}</h4>
           <h4>Birthday: {villager['birthday-string']}</h4>
           <h4>Hobby: {villager['hobby']}</h4>
-          <h4>Catch Phrase: "{villager['catch-phrase']}"</h4>
+          <h4>Catch Phrase: *{villager['catch-phrase']}*</h4>
         </div>
       )
 }
