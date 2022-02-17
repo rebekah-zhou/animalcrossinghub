@@ -5,11 +5,12 @@ import FossilCardBottom from './FossilCardBottom'
 const StyledImg = styled.img`
   border-radius: 40%;
   width: 250px;
+  margin-top: 20px;
 `
 
 const StyledCardDiv = styled.div`
   position: relative;
-  width: 50%;
+  width: 600px;
   margin: auto;
   background-color: #f1ebdc;
   border-radius: 20%;

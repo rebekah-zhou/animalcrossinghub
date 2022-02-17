@@ -1,4 +1,10 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
+import styled from 'styled-components'
+
+const StyledSmall = styled.small`
+    font-family: 'Nunito';
+    font-weight: bold;
+`
 
 function Voter({ id, name, prevLikes }) {
     const [likes, setLikes] = useState(prevLikes)
@@ -20,7 +26,7 @@ function Voter({ id, name, prevLikes }) {
 
     return (
       <div>
-          <small>All Likes: {likes}</small>
+          <StyledSmall>{likes} likes</StyledSmall>
           <button onClick={handleClick}>Like</button>
       </div>
     )
