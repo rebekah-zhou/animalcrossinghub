@@ -8,16 +8,32 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: 'Nunito', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-/* scroll bar settings for chrome
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  /* background-color: yellow; */
+  justify-content: center;
+  align-items: center;
+}
+
+scroll bar settings for chrome
 ::-webkit-scrollbar {
   width: 5px;
   height: 8px;
   background-color: green;
-} */
+}
 
 /* CSS from https://codepen.io/Leoche/pen/rNVggzx */
 html,

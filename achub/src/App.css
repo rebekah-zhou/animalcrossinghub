@@ -42,3 +42,12 @@
   src: local('SweetSaturday'), url(./fonts/Sweet\ Saturday.ttf) format('truetype')
 }
 
+@font-face {
+  font-family: 'Rodin';
+  src: local('Rodin'), url(./fonts/FOTRodinBokutohProUB.otf) format('opentype')
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: local('Nunito'), url(./fonts/Nunito-VariableFont_wght.ttf) format('truetype')
+}
