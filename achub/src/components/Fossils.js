@@ -8,7 +8,7 @@ const ContainerDiv = styled.div`
   flex-direction: row;
 `
 
-function Fossils({ StyledImg }) {
+function Fossils() {
   const [fossils, setFossils] = useState([])
   const [clickedFossil, setClickedFossil] = useState([])
 
@@ -28,21 +28,17 @@ function Fossils({ StyledImg }) {
     }
   }
 
-  function renderFossilsPage () {
-    return (
-      <ContainerDiv>
-          <SideBar
-            handleLiClickPass={handleLiClickPass}
-            fossilsORVillagers={fossils}
-            parent='fossil'
-            />
-          <Card dataObj={clickedFossil.name ? clickedFossil : foundFossil} comType='fossil'/>
-      </ContainerDiv>
-    )
-  }
-
   console.log(fossils)
-  return <>{foundFossil ? renderFossilsPage() : <StyledImg src='https://cdn.dribbble.com/users/635907/screenshots/13905159/media/69d498ca8a58d890459cb69e2e0a01eb.gif' alt='loading mini island' />}</>
+  return (
+    <ContainerDiv>
+      <SideBar
+        handleLiClickPass={handleLiClickPass}
+        fossilsORVillagers={fossils}
+        parent='fossil'
+        />
+      {foundFossil ? <Card dataObj={clickedFossil.name ? clickedFossil : foundFossil} comType='fossil'/> : null }
+    </ContainerDiv>
+  )
 }
 
 export default Fossils

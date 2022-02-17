@@ -40,47 +40,47 @@ function App() {
     })
   }, [])
 
-  return (
-    <>
+  function renderAppComponents() {
+    return (
       <div className="App">
         <NavBar />
         <Switch>
           <Route path='/villagers'>
-            {villagers[1] && votedVillagers[1] ? 
-              <Villagers
-                villagers={villagers} 
-                votedVillagers={votedVillagers}
-                StyledH2={StyledH2}
-              /> 
-              : 
-              <StyledImg
-                src='https://cdn.dribbble.com/users/635907/screenshots/13905159/media/69d498ca8a58d890459cb69e2e0a01eb.gif'
-                alt='loading mini island'
-              />}
+            <Villagers
+              villagers={villagers} 
+              votedVillagers={votedVillagers}
+              StyledH2={StyledH2}
+            />
           </Route>
           <Route path='/fossils'>
-            <Fossils StyledImg={StyledImg}/>
+            <Fossils />
           </Route>
           <Route path='/critters'>
             <Critters />
           </Route>
           <Route exact path='/'>
-            {villagers[1] && votedVillagers[1] ? 
-              <Home
-                villagers={villagers} 
-                votedVillagers={votedVillagers}
-                StyledH2={StyledH2}
-              />
-            : 
-              <StyledImg
-                src='https://cdn.dribbble.com/users/635907/screenshots/13905159/media/69d498ca8a58d890459cb69e2e0a01eb.gif'
-                alt='loading mini island'
-              />
-            }
+            <Home
+              villagers={villagers} 
+              votedVillagers={votedVillagers}
+              StyledH2={StyledH2}
+            />
           </Route>
         </Switch>
       </div>
-    </>
+    )
+  }
+
+  function renderLoadingImage() {
+    return (
+      <StyledImg
+        src='https://cdn.dribbble.com/users/635907/screenshots/13905159/media/69d498ca8a58d890459cb69e2e0a01eb.gif'
+        alt='loading mini island'
+      />
+    )
+  }
+
+  return (
+    <div>{villagers[1] && votedVillagers[1] ? renderAppComponents() : renderLoadingImage()}</div>
   );
 }
 
