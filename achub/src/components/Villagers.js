@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import Card from './Card'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+
+import Card from './Card'
 import SideBar from './SideBar'
 import Voter from './Voter'
 
@@ -9,12 +10,14 @@ const ContainerDiv = styled.div`
   flex-direction: row;
 `
 
-function Villagers({ villagers, votedVillagers }) {
+function Villagers({ villagers, votedVillagers, StyledH2 }) {
   const [clickedVillager, setClickedVillager] = useState(villagers.find(villager => villager.name['name-USen'] === votedVillagers[0].name))
+  const [isClicked, setIsClicked] = useState(false)
 
   function handleLiClickPass(clickedVilName) {
     const foundVil = villagers.find(villager => villager.name['name-USen'] === clickedVilName)
     setClickedVillager(foundVil)
+    setIsClicked(true)
   }
 
   // Find votes related to villager on screen
@@ -22,6 +25,7 @@ function Villagers({ villagers, votedVillagers }) {
 
   return (
     <>
+      {isClicked ? null: <StyledH2>Most Popular Villager</StyledH2>}
       <ContainerDiv>
         <SideBar
           handleLiClickPass={handleLiClickPass}
