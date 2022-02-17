@@ -26,15 +26,15 @@ function Villagers({ villagers, votedVillagers, StyledH2 }) {
   return (
     <>
       {isClicked ? null: <StyledH2>Most Popular Villager</StyledH2>}
+      {clickedVillager ? <Voter id={clickedVillager.id} name={clickedVillager.name['name-USen']} prevLikes={clickedVilVotes}/> : null}
       <ContainerDiv>
         <SideBar
           handleLiClickPass={handleLiClickPass}
           fossilsORVillagers={villagers}
           parent='villager'
         />
-        {clickedVillager ? <Card comType='villager' dataObj={clickedVillager}/> : <h2>Loading ...</h2>}
+        {clickedVillager ? <Card comType='villager' dataObj={clickedVillager}/> : null}
       </ContainerDiv>
-      {clickedVillager ? <Voter id={clickedVillager.id} name={clickedVillager.name['name-USen']} prevLikes={clickedVilVotes}/> : null}
     </>
   )
 }
