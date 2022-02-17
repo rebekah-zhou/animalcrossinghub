@@ -12,6 +12,22 @@ code {
     monospace;
 }
 
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  /* background-color: yellow; */
+  justify-content: center;
+  align-items: center;
+}
+
 /* scroll bar settings for chrome
 ::-webkit-scrollbar {
   width: 5px;

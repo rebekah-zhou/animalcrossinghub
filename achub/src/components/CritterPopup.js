@@ -17,22 +17,9 @@ const customStyles = {
   }
 };
 
-const HorizontalDiv = styled.div`
-  display: flex;
-  flex-direction: row;
+const NameH2 = styled.h2`
   /* background-color: purple; */
-  `
-
-const VerticalDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  /* background-color: yellow; */
-  justify-content: center;
-  align-items: center;
-`
-const NameH3 = styled.h3`
-  /* background-color: purple; */
+  text-decoration: underline dotted 1px;
 `
 
 const ImgDiv = styled.div`
@@ -69,32 +56,44 @@ const Button = styled.button`
   width: auto;
 `
 
-// const ModalType = styled.div`
-//   display: none;
-//   position: fixed;
-//   z-index: 2;
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgba(0, 0, 0, 0.4);
-//   backdrop-filter: blur(4px)
-// `
-
-// const ModalContent = styled.div`
-//   background-color: #fff;
-//   margin: 25% auto;
-//   padding: 20px 20px 20px 20px;
-//   border: 1px solid #888;
-//   width: 40%;
-// `
-
 Modal.setAppElement('#root');
 
 function CritterPopup({ critter, modalIsOpen, setIsOpen }) {
   console.log(critter)
 
+  const monthsArr = critter.availability['month-array-northern'].map(num => {
+    switch(num) {
+      case 1:
+        return 'Jan'
+      case 2:
+        return 'Feb'
+      case 3: 
+        return 'Mar'
+      case 4: 
+        return 'April'
+      case 5: 
+        return 'May'
+      case 6:
+        return 'June'
+      case 7: 
+        return 'July'
+      case 8:
+        return 'Aug'
+      case 9:
+        return 'Sept'
+      case 10: 
+        return 'Oct'
+      case 11: 
+        return 'Nov'
+      case 12: 
+        return 'Dec'
+    }
+  })
+
   //maybe fix capitalization? 
   const name = critter.name['name-USen']
-  const {image_uri, price, availability} = critter
+
+  const time = critter.availability.time ? critter.availability.time : 'All hours'
 
   function afterOpenModal() {
     // can do stuff here later
@@ -114,7 +113,31 @@ function CritterPopup({ critter, modalIsOpen, setIsOpen }) {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <HorizontalDiv>
+        <div className='horizontal'>
+          <div className='vertical'>
+            <h1>{name}</h1>
+            <ImgDiv>
+              <StyledImg src={critter.image_uri}></StyledImg>
+            </ImgDiv>
+          </div>
+          <div className='vertical'>
+              <NameH2>Availability</NameH2>
+                <p>Months: {critter.availability['month-northern']} </p>
+                <p>Time: {time}</p>
+              <PhraseDiv><PhraseP>{critter['museum-phrase']}</PhraseP></PhraseDiv>
+              <ButtonDiv><Button onClick={closeModal}>Close</Button></ButtonDiv>
+            </div>
+        </div>
+      </Modal>
+    </div>
+  );
+}
+
+export default CritterPopup
+
+
+// using styled components
+{/* <HorizontalDiv>
           <VerticalDiv>
             <h1>{name}</h1>
             <ImgDiv>
@@ -122,14 +145,50 @@ function CritterPopup({ critter, modalIsOpen, setIsOpen }) {
             </ImgDiv>
           </VerticalDiv>
           <VerticalDiv>
+              <NameH2>Availability</NameH2>
+              <HorizontalDiv>
+                <p>Month: {critter.availability['month-northern']}</p>
+                <p>Time: {critter.availability['time']}</p>
+              </HorizontalDiv>
               <PhraseDiv><PhraseP>{critter['museum-phrase']}</PhraseP></PhraseDiv>
-          
               <ButtonDiv><Button onClick={closeModal}>Close</Button></ButtonDiv>
             </VerticalDiv>
-        </HorizontalDiv>
-      </Modal>
-    </div>
-  );
-}
+        </HorizontalDiv> */}
 
-export default CritterPopup
+
+// david's css code   
+// const ModalType = styled.div`
+//   display: none;
+//   position: fixed;
+//   z-index: 2;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgba(0, 0, 0, 0.4);
+//   backdrop-filter: blur(4px)
+// `
+
+// const ModalContent = styled.div`
+//   background-color: #fff;
+//   margin: 25% auto;
+//   padding: 20px 20px 20px 20px;
+//   border: 1px solid #888;
+//   width: 40%;
+// `
+
+
+// const HorizontalDiv = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   /* background-color: purple; */
+//   `
+
+// const VerticalDiv = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   width: fit-content;
+//   /* background-color: yellow; */
+//   justify-content: center;
+//   align-items: center;
+// `
