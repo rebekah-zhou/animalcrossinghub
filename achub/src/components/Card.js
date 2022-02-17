@@ -10,7 +10,7 @@ const StyledCardDiv = styled.div`
   width: 600px;
   margin: auto;
   border-radius: 20%;
-  box-shadow: 8px 18px 0 -8px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 8px 18px 0 -8px rgba(0, 0, 0, 0.05); */
 `
 
 function Card({ dataObj, comType }) {

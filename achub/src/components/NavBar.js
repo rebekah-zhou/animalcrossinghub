@@ -24,11 +24,11 @@ const hoverStyle = {
     fontFamily: 'SweetSaturday',
     fontSize: '50px',
     margin: "20px",
-    color: 'pink',
+    color: 'darkGoldenRod',
+    textDecoration: 'dotted underline',
     cursor: 'url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1385231/hand-cursor.png"), pointer',
     letterSpacing: '2px',
     textShadow: '4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15)',
-    textDecoration: 'none',
 }
 
 const StyledDiv = styled.div`
@@ -38,39 +38,43 @@ const StyledDiv = styled.div`
 
 
 function NavBar() {
-    const [styling, setStyling] = useState(linkStyles)
+    const [styling, setStyling] = useState({
+        home: linkStyles,
+        villagers: linkStyles,
+        fossils: linkStyles,
+        critters: linkStyles
+    })
 
   return (
-
     <StyledDiv>
-        <NavLink style={styling} 
+        <NavLink style={styling.home} 
             activeStyle={activeLinkStyle} 
-            onMouseEnter={() => setStyling(hoverStyle)}
-            onMouseLeave={() => setStyling(linkStyles)}
+            onMouseEnter={() => setStyling({...styling, home: hoverStyle})}
+            onMouseLeave={() => setStyling({...styling, home: linkStyles})}
             to="/"
             exact>
             Home
         </NavLink>
-        <NavLink style={styling} 
+        <NavLink style={styling.villagers} 
             activeStyle={activeLinkStyle} 
-            onMouseEnter={() => setStyling(hoverStyle)}
-            onMouseLeave={() => setStyling(linkStyles)}
+            onMouseEnter={() => setStyling({...styling, villagers: hoverStyle})}
+            onMouseLeave={() => setStyling({...styling, villagers: linkStyles})}
             to="/villagers"
             exact>
             Villagers
         </NavLink>
-        <NavLink style={styling} 
+        <NavLink style={styling.fossils} 
             activeStyle={activeLinkStyle} 
-            onMouseEnter={() => setStyling(hoverStyle)}
-            onMouseLeave={() => setStyling(linkStyles)}
+            onMouseEnter={() => setStyling({...styling, fossils: hoverStyle})}
+            onMouseLeave={() => setStyling({...styling, fossils: linkStyles})}
             to="/fossils"
             exact>
             Fossils
         </NavLink>
-        <NavLink style={styling} 
+        <NavLink style={styling.critters} 
             activeStyle={activeLinkStyle} 
-            onMouseEnter={() => setStyling(hoverStyle)}
-            onMouseLeave={() => setStyling(linkStyles)}
+            onMouseEnter={() => setStyling({...styling, critters: hoverStyle})}
+            onMouseLeave={() => setStyling({...styling, critters: linkStyles})}
             to="/critters"
             exact>
             Critters

@@ -7,14 +7,22 @@ const StyledP = styled.p`
   overflow-y: scroll;
   display: block;
   padding-left: 15px;
+  font-family: 'Rodin';
+`
+
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: space-evenly;
 `
 
 function FossilCardBottom({ fossil }) {
   return (
     <div>
-        <StyledP>Museum Phrase {fossil['museum-phrase']}</StyledP>
-        <span>{fossil['price']} Bells</span>
-        <span>Part Of: {fossil['part-of']}</span>
+        <StyledP>{fossil['museum-phrase']}</StyledP>
+        <StyledDiv>
+          <span>Price: {fossil['price']} Bells</span>
+          <span>Part of: {fossil['part-of']}</span>
+        </StyledDiv>
     </div>
   )
 }

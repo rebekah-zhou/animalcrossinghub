@@ -7,7 +7,7 @@ const GridDiv = styled.div`
 display: grid;
 grid-template-columns: repeat(16, 60px);
 grid-auto-rows: 60px;
-border: 5px dotted grey;
+border: 5px dotted darkGoldenRod;
 background-color: #f1ebdc;
 `
 

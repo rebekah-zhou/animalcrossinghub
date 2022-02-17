@@ -27,8 +27,7 @@ function Fossils() {
       setClickedFossil(foundClickedFossil)
     }
   }
-
-  console.log(fossils)
+  
   return (
     <ContainerDiv>
       <SideBar

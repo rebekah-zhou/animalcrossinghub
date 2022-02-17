@@ -35,7 +35,7 @@
 
 @font-face {
   font-family: 'Rodin';
-  src: local('Rodin'), url(./fonts/FOTRodinBokutohProUB.otf) format('opentype')
+  src: local('Rodin'), url(./fonts/FOTRodinBokutohProDB.otf) format('opentype')
 }
 
 @font-face {
@@ -47,7 +47,33 @@ button {
   background-color: #feed9b;
   border-radius: 40%;
   font-family: 'SweetSaturday';
+  color: inherit;
   font-size: 17px;
   padding: 6px;
   margin-left: 6px;
+  cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1385231/hand-cursor.png"),
+    pointer;
+}
+
+/* .word {
+  display: inline-block;
+  white-space: nowrap;
+  opacity: 0;
+  animation: word-in 0.2s ease-out;
+  animation-fill-mode: forwards;
+} */
+
+.letter {
+  display: inline-block;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+/* .word--wave .letter {
+  animation: textSwayAlt 0.5s infinite alternate cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transform: translate3d(0, -6px, 0);
+} */
+
+.word--wave .letter {
+  animation: 1s wave backwards ease-in-out infinite;
 }
