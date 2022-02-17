@@ -1,6 +1,7 @@
 import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils'
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import styled from 'styled-components'
 
 const linkStyles = {
     fontFamily: 'SweetSaturday',
@@ -18,6 +19,7 @@ const activeLinkStyle = {
     color: 'green'
 }
 
+
 const hoverStyle = {
     fontFamily: 'SweetSaturday',
     fontSize: '50px',
@@ -29,11 +31,18 @@ const hoverStyle = {
     textDecoration: 'none',
 }
 
+const StyledDiv = styled.div`
+    padding-bottom: 25px;
+    padding-top: 15px;
+`
+
+
 function NavBar() {
     const [styling, setStyling] = useState(linkStyles)
 
   return (
-    <div style={{'marginTop': '50px'}}>
+
+    <StyledDiv>
         <NavLink style={styling} 
             activeStyle={activeLinkStyle} 
             onMouseEnter={() => setStyling(hoverStyle)}
@@ -66,7 +75,7 @@ function NavBar() {
             exact>
             Critters
         </NavLink>
-    </div>
+    </StyledDiv>
   )
 }
 

@@ -1,11 +1,20 @@
 import React from 'react'
+import styled from 'styled-components';
 
-function FossilCardBottom({ museumPhrase, price, partOf }) {
+const StyledP = styled.p`
+  width: 450px;
+  height: 170px;
+  overflow-y: scroll;
+  display: block;
+  padding-left: 15px;
+`
+
+function FossilCardBottom({ fossil }) {
   return (
     <div>
-        <p>Museum Phrase {museumPhrase}</p>
-        <span>{price} Bells</span>
-        <span>Part Of: {partOf}</span>
+        <StyledP>Museum Phrase {fossil['museum-phrase']}</StyledP>
+        <span>{fossil['price']} Bells</span>
+        <span>Part Of: {fossil['part-of']}</span>
     </div>
   )
 }

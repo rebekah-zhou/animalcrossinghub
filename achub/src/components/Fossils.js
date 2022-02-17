@@ -36,7 +36,7 @@ function Fossils() {
         fossilsORVillagers={fossils}
         parent='fossil'
         />
-      {foundFossil ? <Card dataObj={clickedFossil.name ? clickedFossil : foundFossil} comType='fossil'/> : <h2>Loading ...</h2>}
+      {foundFossil ? <Card dataObj={clickedFossil.name ? clickedFossil : foundFossil} comType='fossil'/> : null }
     </ContainerDiv>
   )
 }
