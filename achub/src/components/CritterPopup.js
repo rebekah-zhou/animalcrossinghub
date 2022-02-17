@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Modal from 'react-modal'
 
@@ -11,7 +11,63 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
   },
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    backdropFilter: 'blur(4px)'
+  }
 };
+
+const HorizontalDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  /* background-color: purple; */
+  `
+
+const VerticalDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  /* background-color: yellow; */
+  justify-content: center;
+  align-items: center;
+`
+const NameH3 = styled.h3`
+  /* background-color: purple; */
+`
+
+const ImgDiv = styled.div`
+  /* background-color: orange; */
+  margin-top: -40px;
+`
+const StyledImg = styled.img`
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+`
+const PhraseDiv = styled.div`
+  width: 600px;
+  height: auto;
+  /* background-color: green; */
+  padding-left: 30px;
+  padding-right: 30px;
+`
+
+const PhraseP = styled.p`
+  text-align: center;
+  font-family: 'Rodin';
+  font-weight: 500;
+`
+const ButtonDiv = styled.div`
+  display:flex;
+  justify-content: flex-end;
+  /* background-color: blue; */
+  width: 100%;
+`
+
+const Button = styled.button`
+  width: auto;
+`
 
 // const ModalType = styled.div`
 //   display: none;
@@ -34,11 +90,15 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 function CritterPopup({ critter, modalIsOpen, setIsOpen }) {
-  let subtitle;
+  console.log(critter)
+
+  //maybe fix capitalization? 
+  const name = critter.name['name-USen']
+  const {image_uri, price, availability} = critter
 
   function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
+    // can do stuff here later
+    return null
   }
 
   function closeModal() {
@@ -54,17 +114,19 @@ function CritterPopup({ critter, modalIsOpen, setIsOpen }) {
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        <img src={critter.image_uri}></img>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
+        <HorizontalDiv>
+          <VerticalDiv>
+            <h1>{name}</h1>
+            <ImgDiv>
+              <StyledImg src={image_uri}></StyledImg>
+            </ImgDiv>
+          </VerticalDiv>
+          <VerticalDiv>
+              <PhraseDiv><PhraseP>{critter['museum-phrase']}</PhraseP></PhraseDiv>
+          
+              <ButtonDiv><Button onClick={closeModal}>Close</Button></ButtonDiv>
+            </VerticalDiv>
+        </HorizontalDiv>
       </Modal>
     </div>
   );

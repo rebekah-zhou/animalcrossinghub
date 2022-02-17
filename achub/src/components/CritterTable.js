@@ -62,7 +62,12 @@ function CritterTable({ selectedCritters }) {
       <GridDiv>
       {iconsToDisplay[25] ? iconsToDisplay : 'Loading...'}
       </GridDiv>
-      <CritterPopup critter={clickedCritter} modalIsOpen={modalIsOpen} setIsOpen={setIsOpen}/>
+      {modalIsOpen ? 
+        <CritterPopup 
+          critter={clickedCritter} 
+          modalIsOpen={modalIsOpen} 
+          setIsOpen={setIsOpen}/>
+        : null}
     </CenteredDiv>
   )
 }
