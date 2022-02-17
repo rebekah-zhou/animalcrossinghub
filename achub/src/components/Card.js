@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import CardNameBubble from './CardNameBubble';
 
 import FossilCardBottom from './FossilCardBottom'
 import VillagerCardBottom from './VillagerCardBottom';
@@ -47,17 +48,6 @@ const HomeBottomCard = styled.div`
   center;
   border-radius: 5% 5% 20% 20% / 100% 100% 100% 100%;
 `
-const StyledDialChar = styled.div`
-display: inline-block;
-margin-right: auto;
-padding: 0.5rem 2rem;
-font-family: $round;
-font-size: 19px;
-border-radius: 30% / 100% 100% 120% 120%;
-transform: perspective(2rem) rotateX(1deg) rotateZ(-9deg) translateX(20%);
-translateY(-45%) scale(0);
-`
-
 function Card({ dataObj, comType }) {
     const {image_uri, name} = dataObj
 
@@ -72,19 +62,10 @@ function Card({ dataObj, comType }) {
     }
   }
 
-  const StyledDialCharWrap = styled.div`
-    position: absolute;
-  `
+
   return (
     <StyledCardDiv>
-        <StyledDialCharWrap>
-          {comType !== 'fossil' ? 
-            <StyledDialChar
-              style={{backgroundColor: `${dataObj['bubble-color']}`, color: `${dataObj['text-color']}`}}
-            >
-              {dataObj.name['name-USen']}
-            </StyledDialChar> : null}
-        </StyledDialCharWrap>
+        {comType !== 'fossil' ? <CardNameBubble villagerOnScreen={dataObj}/> : null }
         <StyledTopCard>
           <StyledImg src={image_uri}></StyledImg>
           <h2 style={{margin: '0'}}>{name['name-USen']}</h2>
