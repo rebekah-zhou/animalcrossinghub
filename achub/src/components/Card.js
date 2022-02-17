@@ -4,6 +4,7 @@ import FossilCardBottom from './FossilCardBottom'
 
 const StyledImg = styled.img`
   border-radius: 40%;
+  width: 250px;
 `
 
 const StyledCardDiv = styled.div`
@@ -13,7 +14,6 @@ const StyledCardDiv = styled.div`
   background-color: #f1ebdc;
   border-radius: 20%;
 `
-
 function Card({ dataObj, comType }) {
     const {image_uri, name} = dataObj
 
@@ -42,7 +42,6 @@ function Card({ dataObj, comType }) {
         <h2>{name['name-USen']}</h2>
         {/* TODO: add other CardBottoms where needed */}
         {renderCardInfo()}
-        {/* {comType === 'home' ? <Voter foundVillagerID={dataObj.id} foundVillagerName={name['name-USen']}/> : null} */}
     </StyledCardDiv>
   )
 }

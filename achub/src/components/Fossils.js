@@ -3,15 +3,6 @@ import Card from './Card'
 import SideBar from './SideBar';
 import styled from 'styled-components';
 
-// TODO: refactor to be re-usable (currently copied code in villagers)
-const StyledDiv = styled.div`
-position: fixed;
-left: 0;
-width: 25%;
-height: 80%;
-overflow: scroll;
-`
-
 const ContainerDiv = styled.div`
   display: flex;
   flex-direction: row;
@@ -37,9 +28,14 @@ function Fossils() {
     }
   }
 
+  console.log(fossils)
   return (
     <ContainerDiv>
-      <StyledDiv>{fossils.map(fossil => <SideBar key={fossil.name['name-USen']} name={fossil.name['name-USen']} handleLiClickPass={handleLiClickPass}/>)}</StyledDiv>
+      <SideBar
+        handleLiClickPass={handleLiClickPass}
+        fossilsORVillagers={fossils}
+        parent='fossil'
+        />
       {foundFossil ? <Card dataObj={clickedFossil.name ? clickedFossil : foundFossil} comType='fossil'/> : <h2>Loading ...</h2>}
     </ContainerDiv>
   )

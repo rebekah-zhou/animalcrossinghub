@@ -23,8 +23,7 @@ function App() {
     fetch('http://localhost:3000/villager-likes/')
     .then(r => r.json())
     .then(fetchedVotedVilagers => {
-      setVotedVillagers(fetchedVotedVilagers)
-      const sortedVillagers = fetchedVotedVilagers.sort((a, b) => b.likes - a.likes)
+      setVotedVillagers(fetchedVotedVilagers.sort((a, b) => b.likes - a.likes))
     })
   }, [])
 
