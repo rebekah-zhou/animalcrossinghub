@@ -8,7 +8,7 @@ display: grid;
 grid-template-columns: repeat(16, 60px);
 grid-auto-rows: 60px;
 border: 5px dotted grey;
-background-color: lavender;
+background-color: #f1ebdc;
 `
 
 const FlexDiv = styled.div`
