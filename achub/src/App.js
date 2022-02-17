@@ -19,7 +19,9 @@ const StyledH2 = styled.h2`
   border-radius: 10%;
   padding: 3px;
 `
+const StyledImg = styled.img`
 
+`
 function App() {
   const [villagers, setVillagers] = useState([])
   const [votedVillagers, setVotedVillagers] = useState([])
@@ -39,35 +41,46 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <NavBar />
-      <Switch>
-        <Route path='/villagers'>
-          {villagers[1] && votedVillagers[1] ? 
-            <Villagers
-              villagers={villagers} 
-              votedVillagers={votedVillagers}
-              StyledH2={StyledH2}
-            /> 
-            : <h2> Loading...</h2>}
-        </Route>
-        <Route path='/fossils'>
-          <Fossils />
-        </Route>
-        <Route path='/critters'>
-          <Critters />
-        </Route>
-        <Route exact path='/'>
-          {villagers[1] && votedVillagers[1] ? 
-          <Home
-            villagers={villagers} 
-            votedVillagers={votedVillagers}
-            StyledH2={StyledH2}
-          />
-            : <h2>Loading...</h2>}
-        </Route>
-      </Switch>
-    </div>
+    <>
+      <div className="App">
+        <NavBar />
+        <Switch>
+          <Route path='/villagers'>
+            {villagers[1] && votedVillagers[1] ? 
+              <Villagers
+                villagers={villagers} 
+                votedVillagers={votedVillagers}
+                StyledH2={StyledH2}
+              /> 
+              : 
+              <StyledImg
+                src='https://cdn.dribbble.com/users/635907/screenshots/13905159/media/69d498ca8a58d890459cb69e2e0a01eb.gif'
+                alt='loading mini island'
+              />}
+          </Route>
+          <Route path='/fossils'>
+            <Fossils StyledImg={StyledImg}/>
+          </Route>
+          <Route path='/critters'>
+            <Critters />
+          </Route>
+          <Route exact path='/'>
+            {villagers[1] && votedVillagers[1] ? 
+              <Home
+                villagers={villagers} 
+                votedVillagers={votedVillagers}
+                StyledH2={StyledH2}
+              />
+            : 
+              <StyledImg
+                src='https://cdn.dribbble.com/users/635907/screenshots/13905159/media/69d498ca8a58d890459cb69e2e0a01eb.gif'
+                alt='loading mini island'
+              />
+            }
+          </Route>
+        </Switch>
+      </div>
+    </>
   );
 }
 

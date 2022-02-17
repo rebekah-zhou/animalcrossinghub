@@ -8,7 +8,7 @@ const ContainerDiv = styled.div`
   flex-direction: row;
 `
 
-function Fossils() {
+function Fossils({ StyledImg }) {
   const [fossils, setFossils] = useState([])
   const [clickedFossil, setClickedFossil] = useState([])
 
@@ -42,7 +42,7 @@ function Fossils() {
   }
 
   console.log(fossils)
-  return <>{foundFossil ? renderFossilsPage() : <h2>Loading...</h2>}</>
+  return <>{foundFossil ? renderFossilsPage() : <StyledImg src='https://cdn.dribbble.com/users/635907/screenshots/13905159/media/69d498ca8a58d890459cb69e2e0a01eb.gif' alt='loading mini island' />}</>
 }
 
 export default Fossils
