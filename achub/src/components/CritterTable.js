@@ -31,6 +31,8 @@ const StyledImg = styled.img`
 display: block;
 margin: auto;
 width: 50px;
+cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1385231/hand-cursor.png"),
+    pointer;
 `
 
 function CritterTable({ selectedCritters }) {
