@@ -7,7 +7,6 @@ const StyledP = styled.p`
   overflow-y: scroll;
   display: block;
   padding-left: 15px;
-  // border-style: solid;
 `
 
 function FossilCardBottom({ fossil }) {
