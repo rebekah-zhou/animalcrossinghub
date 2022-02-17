@@ -43,8 +43,8 @@ const PhraseDiv = styled.div`
 const PhraseP = styled.p`
   text-align: center;
   font-family: 'Rodin';
-  font-weight: 500;
 `
+
 const ButtonDiv = styled.div`
   display:flex;
   justify-content: flex-end;
@@ -124,6 +124,7 @@ function CritterPopup({ critter, modalIsOpen, setIsOpen }) {
               <NameH2>Availability</NameH2>
                 <p>Months: {critter.availability['month-northern']} </p>
                 <p>Time: {time}</p>
+              <NameH2>Description</NameH2>
               <PhraseDiv><PhraseP>{critter['museum-phrase']}</PhraseP></PhraseDiv>
               <ButtonDiv><Button onClick={closeModal}>Close</Button></ButtonDiv>
             </div>
