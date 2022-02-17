@@ -4,16 +4,6 @@ import styled from 'styled-components'
 import SideBar from './SideBar'
 import Voter from './Voter'
 
-// TODO: refactor to be re-usable (currently copied code in fossils)
-const StyledDiv = styled.div`
-position: fixed;
-left: 0;
-width: 25%;
-height: 80%;
-overflow-y: scroll;
-scrollbar-color: green;
-`
-
 const ContainerDiv = styled.div`
   display: flex;
   flex-direction: row;
@@ -33,7 +23,11 @@ function Villagers({ villagers, votedVillagers }) {
   return (
     <>
       <ContainerDiv>
-        <StyledDiv>{villagers.map(villager => <SideBar key={villager.name['name-USen']} name={villager.name['name-USen']} handleLiClickPass={handleLiClickPass}/>)}</StyledDiv>
+        <SideBar
+          handleLiClickPass={handleLiClickPass}
+          fossilsORVillagers={villagers}
+          parent='villager'
+        />
         {clickedVillager ? <Card comType='villager' dataObj={clickedVillager}/> : <h2>Loading ...</h2>}
       </ContainerDiv>
       {clickedVillager ? <Voter id={clickedVillager.id} name={clickedVillager.name['name-USen']} prevLikes={clickedVilVotes}/> : null}
