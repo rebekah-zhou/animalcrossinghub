@@ -33,7 +33,7 @@ function Villagers({ villagers, votedVillagers, StyledH2 }) {
           fossilsORVillagers={villagers}
           parent='villager'
         />
-        {clickedVillager ? <Card comType='villager' dataObj={clickedVillager}/> : <h2>Loading ...</h2>}
+        {clickedVillager ? <Card comType='villager' dataObj={clickedVillager}/> : null}
       </ContainerDiv>
     </>
   )

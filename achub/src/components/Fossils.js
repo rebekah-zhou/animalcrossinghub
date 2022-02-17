@@ -28,17 +28,21 @@ function Fossils() {
     }
   }
 
+  function renderFossilsPage () {
+    return (
+      <ContainerDiv>
+          <SideBar
+            handleLiClickPass={handleLiClickPass}
+            fossilsORVillagers={fossils}
+            parent='fossil'
+            />
+          <Card dataObj={clickedFossil.name ? clickedFossil : foundFossil} comType='fossil'/>
+      </ContainerDiv>
+    )
+  }
+
   console.log(fossils)
-  return (
-    <ContainerDiv>
-      <SideBar
-        handleLiClickPass={handleLiClickPass}
-        fossilsORVillagers={fossils}
-        parent='fossil'
-        />
-      {foundFossil ? <Card dataObj={clickedFossil.name ? clickedFossil : foundFossil} comType='fossil'/> : <h2>Loading ...</h2>}
-    </ContainerDiv>
-  )
+  return <>{foundFossil ? renderFossilsPage() : <h2>Loading...</h2>}</>
 }
 
 export default Fossils
