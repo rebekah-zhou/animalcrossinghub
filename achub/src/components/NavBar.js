@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import styled from 'styled-components'
 
 const linkStyles = {
     fontFamily: 'SweetSaturday',
@@ -12,9 +13,14 @@ const activeLinkStyle = {
     color: 'green'
 }
 
+const StyledDiv = styled.div`
+    padding-bottom: 25px;
+    padding-top: 15px;
+`
+
 function NavBar() {
   return (
-    <div>
+    <StyledDiv>
         <NavLink style={linkStyles} 
             activeStyle={activeLinkStyle} 
             to="/"
@@ -39,7 +45,7 @@ function NavBar() {
             exact>
             Critters
         </NavLink>
-    </div>
+    </StyledDiv>
   )
 }
 

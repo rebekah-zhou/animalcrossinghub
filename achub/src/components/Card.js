@@ -41,7 +41,6 @@ function Card({ dataObj, comType }) {
     <StyledCardDiv>
         <StyledImg src={image_uri}></StyledImg>
         <h2>{name['name-USen']}</h2>
-        {/* TODO: add other CardBottoms where needed */}
         {renderCardInfo()}
     </StyledCardDiv>
   )
