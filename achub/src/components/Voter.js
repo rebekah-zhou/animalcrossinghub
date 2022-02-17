@@ -35,7 +35,7 @@ function Voter({ id, name, prevLikes }) {
 
     return (
       <StyledDiv>
-          <StyledSmall>{likes === 0 ? `${likes} likes :(` : `${likes}`}</StyledSmall>
+          <StyledSmall>{likes === 0 ? `${likes} likes :(` : `${likes} likes`}</StyledSmall>
           <button onClick={handleClick}>Like</button>
       </StyledDiv>
     )

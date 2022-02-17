@@ -3,11 +3,12 @@ import styled from 'styled-components'
 
 const ImgDiv = styled.div`
   /* background-color: orange; */
-  margin-top: -40px;
+  margin-top: -30px;
+  width: 600px;
 `
 const StyledImg = styled.img`
   display: block;
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 `
