@@ -61,7 +61,7 @@ button {
   opacity: 0;
   animation: word-in 0.2s ease-out;
   animation-fill-mode: forwards;
-} */
+} 
 
 .letter {
   display: inline-block;
@@ -69,11 +69,12 @@ button {
   will-change: transform;
 }
 
-/* .word--wave .letter {
+.word--wave .letter {
   animation: textSwayAlt 0.5s infinite alternate cubic-bezier(0.445, 0.05, 0.55, 0.95);
   transform: translate3d(0, -6px, 0);
-} */
+} 
 
 .word--wave .letter {
   animation: 1s wave backwards ease-in-out infinite;
-}
+} */
+

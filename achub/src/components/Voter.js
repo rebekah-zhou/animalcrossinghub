@@ -7,6 +7,13 @@ const StyledSmall = styled.small`
 `
 const StyledDiv = styled.div`
     position: static;
+    background-color: #fdf8e3;
+    border-radius: 30% 30% 20% 20% / 100% 100% 100% 100%;
+    width: 100px;
+    margin: auto;
+    height: 40px;
+    padding-top: 8px;
+    // border: solid;
 `
 function Voter({ id, name, prevLikes }) {
     const [likes, setLikes] = useState(prevLikes)
