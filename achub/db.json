@@ -2,12 +2,12 @@
   "villager-likes": [
     {
       "name": "Cyrano",
-      "likes": 5,
+      "likes": 6,
       "id": 1
     },
     {
       "name": "Antonio",
-      "likes": 1,
+      "likes": 2,
       "id": 2
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "name": "Anabelle",
-      "likes": 1,
+      "likes": 2,
       "id": 4
     },
     {
@@ -32,7 +32,7 @@
     },
     {
       "name": "Olaf",
-      "likes": 1,
+      "likes": 2,
       "id": 7
     },
     {
@@ -432,12 +432,12 @@
     },
     {
       "name": "Knox",
-      "likes": 0,
+      "likes": 2,
       "id": 87
     },
     {
       "name": "Broffina",
-      "likes": 0,
+      "likes": 1,
       "id": 88
     },
     {
@@ -557,7 +557,7 @@
     },
     {
       "name": "Butch",
-      "likes": 0,
+      "likes": 1,
       "id": 112
     },
     {
@@ -1037,7 +1037,7 @@
     },
     {
       "name": "Elmer",
-      "likes": 0,
+      "likes": 2,
       "id": 208
     },
     {
@@ -1202,12 +1202,12 @@
     },
     {
       "name": "Mott",
-      "likes": 0,
+      "likes": 1,
       "id": 241
     },
     {
       "name": "Rory",
-      "likes": 0,
+      "likes": 1,
       "id": 242
     },
     {
@@ -1392,7 +1392,7 @@
     },
     {
       "name": "Phoebe",
-      "likes": 0,
+      "likes": 1,
       "id": 279
     },
     {
@@ -1952,7 +1952,7 @@
     },
     {
       "name": "Audie",
-      "likes": 0,
+      "likes": 3,
       "id": 391
     }
   ]

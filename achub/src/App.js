@@ -29,6 +29,7 @@ function App() {
   const [randomVillager, setRandomVillager] = useState()
   const [isPatched, setIsPatched] = useState() 
 
+
   useEffect(() => {
     fetch('https://acnhapi.com/v1a/villagers')
     .then(r => r.json())
@@ -44,11 +45,7 @@ function App() {
     .then(fetchedVotedVilagers => {
       setVotedVillagers(fetchedVotedVilagers.sort((a, b) => b.likes - a.likes))
     })
-  }, [isPatched])
-
-  function handlePatch(data) {
-    setIsPatched(data)
-  }
+  }, [])
 
   function renderAppComponents() {
     return (
@@ -60,7 +57,6 @@ function App() {
               villagers={villagers} 
               votedVillagers={votedVillagers}
               StyledH2={StyledH2}
-              onPatch={handlePatch}
             />
           </Route>
           <Route path='/fossils'>
@@ -74,7 +70,6 @@ function App() {
               randomVillager={randomVillager}
               votedVillagers={votedVillagers}
               StyledH2={StyledH2}
-              onPatch={handlePatch}
             />
           </Route>
         </Switch>

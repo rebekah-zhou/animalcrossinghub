@@ -25,7 +25,6 @@ function Home({ randomVillager={
       "catch-USen": "hurk"
     }
   }, votedVillagers, StyledH2, onPatch }) {
-  console.log(randomVillager)
 
     // Find votes related to villager on screen
      const randomVilVotes = votedVillagers.find(votedVillager => votedVillager.name === randomVillager.name['name-USen']).likes
