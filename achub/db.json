@@ -2,22 +2,22 @@
   "villager-likes": [
     {
       "name": "Cyrano",
-      "likes": 0,
+      "likes": 5,
       "id": 1
     },
     {
       "name": "Antonio",
-      "likes": 0,
+      "likes": 1,
       "id": 2
     },
     {
       "name": "Pango",
-      "likes": 0,
+      "likes": 2,
       "id": 3
     },
     {
       "name": "Anabelle",
-      "likes": 0,
+      "likes": 1,
       "id": 4
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "name": "Annalisa",
-      "likes": 0,
+      "likes": 13,
       "id": 6
     },
     {
@@ -67,7 +67,7 @@
     },
     {
       "name": "Tutu",
-      "likes": 0,
+      "likes": 1,
       "id": 14
     },
     {
@@ -137,7 +137,7 @@
     },
     {
       "name": "Piper",
-      "likes": 0,
+      "likes": 1,
       "id": 28
     },
     {
@@ -167,7 +167,7 @@
     },
     {
       "name": "Peck",
-      "likes": 0,
+      "likes": 2,
       "id": 34
     },
     {
@@ -277,7 +277,7 @@
     },
     {
       "name": "Kitty",
-      "likes": 0,
+      "likes": 1,
       "id": 56
     },
     {
@@ -327,7 +327,7 @@
     },
     {
       "name": "Maple",
-      "likes": 12,
+      "likes": 14,
       "id": 66
     },
     {
@@ -347,7 +347,7 @@
     },
     {
       "name": "Stitches",
-      "likes": 0,
+      "likes": 1,
       "id": 70
     },
     {
@@ -682,7 +682,7 @@
     },
     {
       "name": "Scoot",
-      "likes": 0,
+      "likes": 3,
       "id": 137
     },
     {
@@ -817,7 +817,7 @@
     },
     {
       "name": "Cousteau",
-      "likes": 0,
+      "likes": 1,
       "id": 164
     },
     {
@@ -1752,12 +1752,12 @@
     },
     {
       "name": "Timbra",
-      "likes": 0,
+      "likes": 1,
       "id": 351
     },
     {
       "name": "Frita",
-      "likes": 0,
+      "likes": 1,
       "id": 352
     },
     {

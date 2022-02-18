@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import styled from 'styled-components'
 
 const StyledSmall = styled.small`
@@ -15,8 +15,14 @@ const StyledDiv = styled.div`
     padding-top: 8px;
     // border: solid;
 `
-function Voter({ id, name, prevLikes }) {
+function Voter({ id, name, prevLikes, onPatch }) {
     const [likes, setLikes] = useState(prevLikes)
+
+    useEffect(() => {
+        setLikes(prevLikes)
+    }, [id])
+
+    console.log(`name: ${name}, previous likes: ${prevLikes}, likes: ${likes}`)
 
     function handleClick() {
         setLikes(likes => likes + 1)
@@ -30,7 +36,8 @@ function Voter({ id, name, prevLikes }) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(updatedVillagerLikes)
-        })
+        }).then(r => r.json())
+        .then((data) => onPatch(data))
     }
 
     return (

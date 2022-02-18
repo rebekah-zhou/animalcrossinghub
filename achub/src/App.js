@@ -1,3 +1,4 @@
+import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom'
@@ -25,6 +26,7 @@ const StyledImg = styled.img`
 function App() {
   const [villagers, setVillagers] = useState([])
   const [votedVillagers, setVotedVillagers] = useState([])
+  const [isPatched, setIsPatched] = useState() 
 
   useEffect(() => {
     fetch('https://acnhapi.com/v1a/villagers')
@@ -38,7 +40,11 @@ function App() {
     .then(fetchedVotedVilagers => {
       setVotedVillagers(fetchedVotedVilagers.sort((a, b) => b.likes - a.likes))
     })
-  }, [])
+  }, [isPatched])
+
+  function handlePatch(data) {
+    setIsPatched(data)
+  }
 
   function renderAppComponents() {
     return (
@@ -50,6 +56,7 @@ function App() {
               villagers={villagers} 
               votedVillagers={votedVillagers}
               StyledH2={StyledH2}
+              onPatch={handlePatch}
             />
           </Route>
           <Route path='/fossils'>
@@ -63,6 +70,7 @@ function App() {
               villagers={villagers} 
               votedVillagers={votedVillagers}
               StyledH2={StyledH2}
+              onPatch={handlePatch}
             />
           </Route>
         </Switch>
