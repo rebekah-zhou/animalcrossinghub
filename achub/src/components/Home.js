@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Card from './Card'
 import Voter from './Voter'
 
-function Home({ villagers, votedVillagers, StyledH2, onPatch }) {
+function Home({ villagers, votedVillagers, StyledH2 }) {
     
     const randomNum = Math.floor(Math.random() * 391)
     const foundVillager = villagers[randomNum]
@@ -13,7 +13,7 @@ function Home({ villagers, votedVillagers, StyledH2, onPatch }) {
   return (
     <div>
         <StyledH2>Visiting Villager</StyledH2>
-        <Voter id={foundVillager.id} name={foundVillager.name['name-USen']} prevLikes={randomVilVotes} onPatch={onPatch}/>
+        <Voter id={foundVillager.id} name={foundVillager.name['name-USen']} prevLikes={randomVilVotes}/>
         <Card dataObj={foundVillager} comType='home'/>
     </div>
   )

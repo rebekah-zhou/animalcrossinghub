@@ -13,13 +13,11 @@ const ContainerDiv = styled.div`
 function Villagers({ villagers, votedVillagers, StyledH2, onPatch }) {
   const [clickedVillager, setClickedVillager] = useState(villagers.find(villager => villager.name['name-USen'] === votedVillagers[0].name))
   const [isClicked, setIsClicked] = useState(false)
-  // const [clickedVilVotes, setClickedVilVotes] = useState(votedVillagers.find(votedVillager => votedVillager.name === clickedVillager.name['name-USen']).likes)
 
   function handleLiClickPass(clickedVilName) {
     const foundVil = villagers.find(villager => villager.name['name-USen'] === clickedVilName)
     setClickedVillager(foundVil)
     setIsClicked(true)
-    // setClickedVilVotes(votedVillagers.find(votedVillager => votedVillager.name === clickedVilName).likes)
   }
 
   // Find votes related to villager on screen
