@@ -78,3 +78,8 @@ button {
   animation: 1s wave backwards ease-in-out infinite;
 } */
 
+::placeholder {
+  font-family: 'Rodin';
+  color: darkGoldenRod;
+  font-weight: bold;
+}

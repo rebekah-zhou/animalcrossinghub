@@ -32,7 +32,7 @@ function CardBottom({comType, dataObj}) {
     const renderCardInfo = () => {
         switch(comType) {
             case 'home':
-            return <h3>Catch Phrase: "{dataObj['catch-phrase']}"</h3>
+            return <h3>Catch Phrase: *{dataObj['catch-phrase']}*</h3>
             case 'fossil':
             return <FossilCardBottom fossil={dataObj}/>
             case 'villager':
