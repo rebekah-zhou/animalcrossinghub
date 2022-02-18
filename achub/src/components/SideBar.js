@@ -5,8 +5,8 @@ import SearchBar from './SearchBar';
 const StyledDiv = styled.div`
 position: fixed;
 left: 50px;
-width: 15%;
-height: 80%;
+width: 180px;
+height: 65%;
 background-color: #feed9b;
 border-radius: 10%;
 padding: 10px;
