@@ -12,7 +12,7 @@
     },
     {
       "name": "Pango",
-      "likes": 2,
+      "likes": 3,
       "id": 3
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "name": "Snooty",
-      "likes": 0,
+      "likes": 1,
       "id": 5
     },
     {
@@ -37,12 +37,12 @@
     },
     {
       "name": "Teddy",
-      "likes": 0,
+      "likes": 1,
       "id": 8
     },
     {
       "name": "Pinky",
-      "likes": 0,
+      "likes": 1,
       "id": 9
     },
     {
@@ -97,7 +97,7 @@
     },
     {
       "name": "Beardo",
-      "likes": 0,
+      "likes": 2,
       "id": 20
     },
     {
@@ -117,7 +117,7 @@
     },
     {
       "name": "Robin",
-      "likes": 0,
+      "likes": 1,
       "id": 24
     },
     {
@@ -182,7 +182,7 @@
     },
     {
       "name": "Rodeo",
-      "likes": 0,
+      "likes": 15,
       "id": 37
     },
     {
@@ -327,7 +327,7 @@
     },
     {
       "name": "Maple",
-      "likes": 14,
+      "likes": 15,
       "id": 66
     },
     {
@@ -412,7 +412,7 @@
     },
     {
       "name": "Egbert",
-      "likes": 0,
+      "likes": 1,
       "id": 83
     },
     {
@@ -547,7 +547,7 @@
     },
     {
       "name": "Erik",
-      "likes": 0,
+      "likes": 1,
       "id": 110
     },
     {
@@ -592,12 +592,12 @@
     },
     {
       "name": "Cookie",
-      "likes": 0,
+      "likes": 1,
       "id": 119
     },
     {
       "name": "Maddie",
-      "likes": 0,
+      "likes": 1,
       "id": 120
     },
     {
@@ -622,7 +622,7 @@
     },
     {
       "name": "Cherry",
-      "likes": 0,
+      "likes": 1,
       "id": 125
     },
     {
@@ -697,7 +697,7 @@
     },
     {
       "name": "Ketchup",
-      "likes": 0,
+      "likes": 2,
       "id": 140
     },
     {
@@ -917,7 +917,7 @@
     },
     {
       "name": "Louie",
-      "likes": 0,
+      "likes": 1,
       "id": 184
     },
     {
@@ -1122,7 +1122,7 @@
     },
     {
       "name": "Ozzie",
-      "likes": 0,
+      "likes": 1,
       "id": 225
     },
     {
@@ -1212,7 +1212,7 @@
     },
     {
       "name": "Lionel",
-      "likes": 0,
+      "likes": 1,
       "id": 243
     },
     {
@@ -1312,7 +1312,7 @@
     },
     {
       "name": "Bettina",
-      "likes": 0,
+      "likes": 1,
       "id": 263
     },
     {
@@ -1502,7 +1502,7 @@
     },
     {
       "name": "Sprinkle",
-      "likes": 0,
+      "likes": 1,
       "id": 301
     },
     {
@@ -1767,12 +1767,12 @@
     },
     {
       "name": "Pietro",
-      "likes": 0,
+      "likes": 1,
       "id": 354
     },
     {
       "name": "Dom",
-      "likes": 0,
+      "likes": 17,
       "id": 355
     },
     {
@@ -1802,7 +1802,7 @@
     },
     {
       "name": "Agent S",
-      "likes": 0,
+      "likes": 22,
       "id": 361
     },
     {
@@ -1847,7 +1847,7 @@
     },
     {
       "name": "Poppy",
-      "likes": 0,
+      "likes": 1,
       "id": 370
     },
     {
@@ -1947,7 +1947,7 @@
     },
     {
       "name": "Kyle",
-      "likes": 0,
+      "likes": 1,
       "id": 390
     },
     {

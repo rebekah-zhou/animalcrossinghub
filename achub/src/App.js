@@ -26,12 +26,16 @@ const StyledImg = styled.img`
 function App() {
   const [villagers, setVillagers] = useState([])
   const [votedVillagers, setVotedVillagers] = useState([])
+  const [randomVillager, setRandomVillager] = useState()
   const [isPatched, setIsPatched] = useState() 
 
   useEffect(() => {
     fetch('https://acnhapi.com/v1a/villagers')
     .then(r => r.json())
-    .then(data => setVillagers(() => data))
+    .then(data => {
+      setVillagers(() => data)
+      setRandomVillager(data[Math.floor(Math.random() * 391)])
+    })
   }, [])
 
   useEffect(() => {
@@ -67,7 +71,7 @@ function App() {
           </Route>
           <Route exact path='/'>
             <Home
-              villagers={villagers} 
+              randomVillager={randomVillager}
               votedVillagers={votedVillagers}
               StyledH2={StyledH2}
               onPatch={handlePatch}
@@ -88,7 +92,7 @@ function App() {
   }
 
   return (
-    <div>{villagers[1] && votedVillagers[1] ? renderAppComponents() : renderLoadingImage()}</div>
+    <div>{villagers[0] && votedVillagers[1] ? renderAppComponents() : renderLoadingImage()}</div>
   );
 }
 
