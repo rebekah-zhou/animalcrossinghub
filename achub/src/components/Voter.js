@@ -37,6 +37,7 @@ function Voter({ id, name, prevLikes, onPatch }) {
             },
             body: JSON.stringify(updatedVillagerLikes)
         }).then(r => r.json())
+        .then(data => onPatch(data))
     }
 
     return (
