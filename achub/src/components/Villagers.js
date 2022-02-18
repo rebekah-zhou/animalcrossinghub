@@ -10,7 +10,7 @@ const ContainerDiv = styled.div`
   flex-direction: row;
 `
 
-function Villagers({ villagers, votedVillagers, StyledH2 }) {
+function Villagers({ villagers, votedVillagers, StyledH2, onPatch }) {
   const [clickedVillager, setClickedVillager] = useState(villagers.find(villager => villager.name['name-USen'] === votedVillagers[0].name))
   const [isClicked, setIsClicked] = useState(false)
 
@@ -26,7 +26,12 @@ function Villagers({ villagers, votedVillagers, StyledH2 }) {
   return (
     <>
       {isClicked ? null: <StyledH2>Most Popular Villager</StyledH2>}
-      {clickedVillager ? <Voter id={clickedVillager.id} name={clickedVillager.name['name-USen']} prevLikes={clickedVilVotes}/> : null}
+      {clickedVillager ? 
+        <Voter id={clickedVillager.id} 
+          name={clickedVillager.name['name-USen']} 
+          prevLikes={clickedVilVotes}
+          onPatch={onPatch}/>
+           : null}
       <ContainerDiv>
         <SideBar
           handleLiClickPass={handleLiClickPass}

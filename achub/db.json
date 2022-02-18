@@ -2,37 +2,37 @@
   "villager-likes": [
     {
       "name": "Cyrano",
-      "likes": 0,
+      "likes": 6,
       "id": 1
     },
     {
       "name": "Antonio",
-      "likes": 0,
+      "likes": 2,
       "id": 2
     },
     {
       "name": "Pango",
-      "likes": 0,
+      "likes": 2,
       "id": 3
     },
     {
       "name": "Anabelle",
-      "likes": 0,
+      "likes": 2,
       "id": 4
     },
     {
       "name": "Snooty",
-      "likes": 0,
+      "likes": 1,
       "id": 5
     },
     {
       "name": "Annalisa",
-      "likes": 0,
+      "likes": 13,
       "id": 6
     },
     {
       "name": "Olaf",
-      "likes": 1,
+      "likes": 2,
       "id": 7
     },
     {
@@ -67,7 +67,7 @@
     },
     {
       "name": "Tutu",
-      "likes": 0,
+      "likes": 1,
       "id": 14
     },
     {
@@ -137,7 +137,7 @@
     },
     {
       "name": "Piper",
-      "likes": 0,
+      "likes": 1,
       "id": 28
     },
     {
@@ -167,7 +167,7 @@
     },
     {
       "name": "Peck",
-      "likes": 0,
+      "likes": 2,
       "id": 34
     },
     {
@@ -277,7 +277,7 @@
     },
     {
       "name": "Kitty",
-      "likes": 0,
+      "likes": 1,
       "id": 56
     },
     {
@@ -327,7 +327,7 @@
     },
     {
       "name": "Maple",
-      "likes": 12,
+      "likes": 17,
       "id": 66
     },
     {
@@ -347,7 +347,7 @@
     },
     {
       "name": "Stitches",
-      "likes": 0,
+      "likes": 1,
       "id": 70
     },
     {
@@ -432,12 +432,12 @@
     },
     {
       "name": "Knox",
-      "likes": 0,
+      "likes": 2,
       "id": 87
     },
     {
       "name": "Broffina",
-      "likes": 0,
+      "likes": 1,
       "id": 88
     },
     {
@@ -557,7 +557,7 @@
     },
     {
       "name": "Butch",
-      "likes": 0,
+      "likes": 1,
       "id": 112
     },
     {
@@ -682,7 +682,7 @@
     },
     {
       "name": "Scoot",
-      "likes": 0,
+      "likes": 3,
       "id": 137
     },
     {
@@ -817,7 +817,7 @@
     },
     {
       "name": "Cousteau",
-      "likes": 0,
+      "likes": 1,
       "id": 164
     },
     {
@@ -1037,7 +1037,7 @@
     },
     {
       "name": "Elmer",
-      "likes": 0,
+      "likes": 2,
       "id": 208
     },
     {
@@ -1122,7 +1122,7 @@
     },
     {
       "name": "Ozzie",
-      "likes": 0,
+      "likes": 1,
       "id": 225
     },
     {
@@ -1202,12 +1202,12 @@
     },
     {
       "name": "Mott",
-      "likes": 0,
+      "likes": 1,
       "id": 241
     },
     {
       "name": "Rory",
-      "likes": 0,
+      "likes": 1,
       "id": 242
     },
     {
@@ -1392,7 +1392,7 @@
     },
     {
       "name": "Phoebe",
-      "likes": 0,
+      "likes": 1,
       "id": 279
     },
     {
@@ -1752,12 +1752,12 @@
     },
     {
       "name": "Timbra",
-      "likes": 0,
+      "likes": 1,
       "id": 351
     },
     {
       "name": "Frita",
-      "likes": 0,
+      "likes": 1,
       "id": 352
     },
     {
@@ -1952,7 +1952,7 @@
     },
     {
       "name": "Audie",
-      "likes": 0,
+      "likes": 3,
       "id": 391
     }
   ]
