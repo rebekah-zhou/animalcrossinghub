@@ -8,6 +8,7 @@ display: grid;
 grid-template-columns: repeat(16, 60px);
 grid-auto-rows: 60px;
 border: 5px dotted darkGoldenRod;
+border-radius: 10px;
 background-color: #f1ebdc;
 `
 
