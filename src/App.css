@@ -1,0 +1,85 @@
+.App {
+  text-align: center;
+}
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+} */
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+/* .App-link {
+  color: #61dafb;
+} */
+
+@font-face {
+  font-family: 'SweetSaturday';
+  src: local('SweetSaturday'), url(./fonts/Sweet\ Saturday.ttf) format('truetype')
+}
+
+@font-face {
+  font-family: 'Rodin';
+  src: local('Rodin'), url(./fonts/FOTRodinBokutohProDB.otf) format('opentype')
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: local('Nunito'), url(./fonts/Nunito-VariableFont_wght.ttf) format('truetype')
+}
+
+button {
+  background-color: #feed9b;
+  border-radius: 40%;
+  font-family: 'SweetSaturday';
+  color: inherit;
+  font-size: 17px;
+  padding: 6px;
+  margin-left: 6px;
+  cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1385231/hand-cursor.png"),
+    pointer;
+}
+
+/* .word {
+  display: inline-block;
+  white-space: nowrap;
+  opacity: 0;
+  animation: word-in 0.2s ease-out;
+  animation-fill-mode: forwards;
+} 
+
+.letter {
+  display: inline-block;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.word--wave .letter {
+  animation: textSwayAlt 0.5s infinite alternate cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transform: translate3d(0, -6px, 0);
+} 
+
+.word--wave .letter {
+  animation: 1s wave backwards ease-in-out infinite;
+} */
+
+::placeholder {
+  font-family: 'Rodin';
+  color: darkGoldenRod;
+  font-weight: bold;
+}
