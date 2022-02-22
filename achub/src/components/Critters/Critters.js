@@ -15,7 +15,6 @@ const ContainerColumn = styled.div`
 `
 
 function Critters() {
-    
   const [bugs, setBugs] = useState([])
   const [sea, setSea] = useState([])
   const [fish, setFish] = useState([])
@@ -34,25 +33,15 @@ function Critters() {
       selectedCritters = bugs
   }
 
-  useEffect(() => {
-    fetch('https://acnhapi.com/v1a/bugs')
+  function fetchCritters(type, setter) {
+    fetch(`https://acnhapi.com/v1a/${type}`)
     .then(r => r.json())
-    .then(data => {
-      setBugs(() => data)
-    })
-  }, [])
+    .then(critters => setter(() => critters))
+  }
 
-  useEffect(() => {
-    fetch('https://acnhapi.com/v1a/sea')
-    .then(r => r.json())
-    .then(data => setSea(() => data))
-  }, [])
-
-  useEffect(() => {
-    fetch('https://acnhapi.com/v1a/fish')
-    .then(r => r.json())
-    .then(data => setFish(() => data))
-  }, [])
+  useEffect(() => fetchCritters('bugs', setBugs), [])
+  useEffect(() => fetchCritters('sea', setSea), [])
+  useEffect(() => fetchCritters('fish', setFish), [])
     
   return (
     <ContainerColumn>

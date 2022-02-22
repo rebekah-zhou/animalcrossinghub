@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import styled from 'styled-components';
 
-import Critters from './components/Critters';
+import Critters from './components/Critters/Critters';
 import Villagers from './components/Villagers';
 import Fossils from './components/Fossils';
 import NavBar from './components/NavBar';
@@ -20,9 +19,11 @@ const StyledH2 = styled.h2`
   padding: 3px;
   border: 5px dotted darkGoldenRod;
 `
+
 const StyledImg = styled.img`
   object-fit: cover;
 `
+
 function App() {
   const [villagers, setVillagers] = useState([])
   const [votedVillagers, setVotedVillagers] = useState([])
